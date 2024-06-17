@@ -36,7 +36,6 @@ const  createCliente = async(req, res) => {
       tarifa_12T_15T: req.body.tarifa_12T_15T,
       tarifa_Mas15T: req.body.tarifa_Mas15T,
       tarifa_Valencia_3T: req.body.tarifa_Valencia_3T,
-      fecha_registro: req.body.fecha_registro,
       cliente_validado: req.body.cliente_validado,
     });
     return res.status(200).json({ message: "Client created", cliente: cliente });

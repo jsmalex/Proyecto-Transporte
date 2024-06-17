@@ -42,9 +42,6 @@ const Cliente = connection.define(
     tarifa_Valencia_3T: {
       type: DataTypes.INTEGER,
     },
-    fecha_registro: {
-      type: DataTypes.DATE,
-    },
     cliente_validado: {
         type: DataTypes.BOOLEAN,
     }
