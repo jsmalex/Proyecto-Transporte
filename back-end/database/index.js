@@ -25,5 +25,4 @@ const checkDb = async () => {
 
 module.exports = {
   checkDb,
-  connection,
 };

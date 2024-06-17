@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const morgan = require("morgan");
-const { connection, checkDb } = require("./database/index.js");
+const { checkDb } = require("./database/index.js");
 
 
 async function checkAndSyncMySQL() {
@@ -13,7 +13,7 @@ async function checkAndSyncMySQL() {
   }
 }
 
-const initializeAnListenExpress = () => {
+const initializeExpressAndListen = () => {
   try {
     app
       .use(express.json())
