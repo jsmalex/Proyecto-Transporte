@@ -20,6 +20,7 @@ const initializeExpressAndListen = () => {
   try {
     app
       .use(express.json())
+      .use("/api", require("./api/routes/index"))
       .use(cors())
       .use(morgan("dev"))
       .listen(3000, () => {
