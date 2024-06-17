@@ -2,12 +2,15 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const morgan = require("morgan");
-const { checkDb } = require("./database/index.js");
+const { checkDb, connection, syncModels } = require("./database/index.js");
+const initializeRelations = require("./database/relations.js");
 
 
 async function checkAndSyncMySQL() {
   try {
     await checkDb();
+    initializeRelations();
+    await syncModels();
   } catch (error) {
     throw error;
   }

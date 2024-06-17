@@ -23,6 +23,17 @@ const checkDb = async () => {
   }
 };
 
+const syncModels = async () => {
+  try {
+    await connection.sync();
+    console.log("Models added");
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 module.exports = {
+  connection,
   checkDb,
+  syncModels,
 };
