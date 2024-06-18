@@ -24,13 +24,13 @@ const getOneReference = async (req, res) => {
 
 const createReference = async (req, res) => {
   try {
-    const reference = await reference.create({
-      client_id: req.body.client,
-      reference: req.body.reference,
+    const reference = await Reference.create({
+      code_ref: req.body.code_ref,
+      order_id: req.body.order_id,
     });
     return res
       .status(200)
-      .json({ message: "References created", reference: reference });
+      .json({ message: "Reference created", reference: reference });
   } catch (error) {
     res.status(500).send(error.message);
   }
@@ -38,16 +38,13 @@ const createReference = async (req, res) => {
 
 const updateReference = async (req, res) => {
   try {
-    const [referenceExist, reference] = await Reference.update(req.body, {
-      returning: true,
-      where: {
-        id: req.params.id,
-      },
-    });
-    if (referenceExist !== 0) {
+    const reference = await Reference.findByPk(req.params.id);
+    const updateReference = await reference.update(req.body);
+    reference.save();
+    if (updateReference) {
       return res
         .status(200)
-        .json({ message: "Reference updated", reference: reference });
+        .json({ message: "Reference updated", reference: updateReference });
     } else {
       return res.status(404).send("Reference not found");
     }

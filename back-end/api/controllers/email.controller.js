@@ -24,8 +24,8 @@ const getOneEmail = async (req, res) => {
 
 const createEmail = async (req, res) => {
   try {
-    const email = await email.create({
-      cliente_id: req.body.cliente,
+    const email = await Email.create({
+      client_id: req.body.client_id,
       email: req.body.email
     });
     return res
@@ -36,18 +36,16 @@ const createEmail = async (req, res) => {
   }
 };
 
+
 const updateEmail = async (req, res) => {
   try {
-    const [emailExist, email] = await Email.update(req.body, {
-      returning: true,
-      where: {
-        id: req.params.id,
-      },
-    });
-    if (emailExist !== 0) {
+    const email = await Email.findByPk(req.params.id);
+    const updateEmail = await email.update(req.body);
+    email.save();
+    if (updateEmail) {
       return res
         .status(200)
-        .json({ message: "Email updated", email: email });
+        .json({ message: "Email updated", email: updateEmail });
     } else {
       return res.status(404).send("Email not found");
     }
@@ -55,6 +53,7 @@ const updateEmail = async (req, res) => {
     return res.status(500).send(error.message);
   }
 };
+
 
 const deleteEmail = async (req, res) => {
   try {

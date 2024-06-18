@@ -24,30 +24,28 @@ const getOnePhone = async (req, res) => {
 
 const createPhone = async (req, res) => {
   try {
-    const phone = await phone.create({
-      cliente_id: req.body.cliente,
+    const phone = await Phone.create({
+      client_id: req.body.client_id,
       phone: req.body.phone,
     });
     return res
       .status(200)
       .json({ message: "Telephone number created", phone: phone });
   } catch (error) {
+    console.log("Pepe");
     res.status(500).send(error.message);
   }
 };
 
 const updatePhone = async (req, res) => {
   try {
-    const [phoneExist, phone] = await Phone.update(req.body, {
-      returning: true,
-      where: {
-        id: req.params.id,
-      },
-    });
-    if (phoneExist !== 0) {
+    const phone = await Phone.findByPk(req.params.id)
+    const updatePhone = await phone.update(req.body)
+    phone.save() 
+    if (updatePhone) {
       return res
         .status(200)
-        .json({ message: "Telephone number updated", phone: phone });
+        .json({ message: "Telephone number updated", phone: updatePhone });
     } else {
       return res.status(404).send("Telephone number not found");
     }

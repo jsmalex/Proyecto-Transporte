@@ -2,7 +2,7 @@ const Employee = require("../models/employee.model.js");
 
 const getAllEmployees = async (request, response) => {
   try {
-    const Employees = await Employee.findAll();
+    const employees = await Employee.findAll();
     return response.status(200).json(employees);
   } catch (error) {
     console.log(error);
@@ -24,7 +24,7 @@ const getOneEmployee = async (req, res) => {
 
 const createEmployee = async (req, res) => {
   try {
-    const employee = await employee.create({
+    const employee = await Employee.create({
       name: req.body.name,
       email: req.body.email,
       phone: req.body.phone,
@@ -39,18 +39,15 @@ const createEmployee = async (req, res) => {
 
 const updateEmployee = async (req, res) => {
   try {
-    const [employeeExist, employee] = await Employee.update(req.body, {
-      returning: true,
-      where: {
-        id: req.params.id,
-      },
-    });
-    if (employeeExist !== 0) {
+    const employee = await Employee.findByPk(req.params.id);
+    const updateEmployee = await employee.update(req.body);
+    employee.save();
+    if (updateEmployee) {
       return res
         .status(200)
-        .json({ message: "Worker updated", employee: employee });
+        .json({ message: "Employee updated", employee: updateEmployee });
     } else {
-      return res.status(404).send("Worker not found");
+      return res.status(404).send("Employee not found");
     }
   } catch (error) {
     return res.status(500).send(error.message);
