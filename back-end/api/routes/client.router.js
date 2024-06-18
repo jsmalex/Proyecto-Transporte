@@ -5,7 +5,7 @@ const {
   createCliente,
   updateCliente,
   deleteCliente
-} = require("../controllers/cliente.controller.js");
+} = require("../controllers/client.controller.js");
 
 router.get("/", getAllClientes);
 router.get("/:id", getOneCliente);

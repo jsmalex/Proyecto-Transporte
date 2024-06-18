@@ -1,6 +1,6 @@
 // Importamos Sequelize desde el módulo sequelize, que es necesario para crear la conexión con la base de datos
 const { Sequelize } = require("sequelize");
-const env = require('dotenv').config();
+const env = require("dotenv").config();
 // Creamos una nueva instancia de Sequelize para manejar la conexión con una base de datos MySQL, es decir, establecemos las credenciales y demás opciones necesarias para la conexión
 const connection = new Sequelize(
   env.parsed.DB_NAME,

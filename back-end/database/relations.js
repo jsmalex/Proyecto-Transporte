@@ -1,4 +1,6 @@
-const cliente = require('../api/models/cliente.model')
+const cliente = require("../api/models/client.model");
+const pedido = require("../api/models/order.model");
+const vehiculo = require("../api/models/vehicles.model");
 
 const initializeRelations = () => {
   try {

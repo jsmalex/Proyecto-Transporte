@@ -1,4 +1,4 @@
-const Cliente = require("../models/cliente.model.js");
+const Cliente = require("../models/client.model.js");
 
 const getAllClientes = async (request, response) => {
   try {
@@ -9,7 +9,7 @@ const getAllClientes = async (request, response) => {
   }
 };
 
-const getOneCliente = async(req, res) => {
+const getOneCliente = async (req, res) => {
   try {
     const cliente = await Cliente.findByPk(req.params.id);
     if (cliente) {
@@ -20,9 +20,9 @@ const getOneCliente = async(req, res) => {
   } catch (error) {
     res.status(500).send(error.message);
   }
-}
+};
 
-const  createCliente = async(req, res) => {
+const createCliente = async (req, res) => {
   try {
     const cliente = await Cliente.create({
       nombre: req.body.nombre,
@@ -38,11 +38,13 @@ const  createCliente = async(req, res) => {
       tarifa_Valencia_3T: req.body.tarifa_Valencia_3T,
       cliente_validado: req.body.cliente_validado,
     });
-    return res.status(200).json({ message: "Client created", cliente: cliente });
+    return res
+      .status(200)
+      .json({ message: "Client created", cliente: cliente });
   } catch (error) {
     res.status(500).send(error.message);
   }
-}
+};
 
 const updateCliente = async (req, res) => {
   try {
@@ -53,16 +55,18 @@ const updateCliente = async (req, res) => {
       },
     });
     if (clienteExist !== 0) {
-      return res.status(200).json({ message: "Client updated", cliente: cliente });
+      return res
+        .status(200)
+        .json({ message: "Client updated", cliente: cliente });
     } else {
       return res.status(404).send("Client not found");
     }
   } catch (error) {
     return res.status(500).send(error.message);
   }
-}
+};
 
-const deleteCliente = async(req, res) => {
+const deleteCliente = async (req, res) => {
   try {
     const cliente = await Cliente.destroy({
       where: {
@@ -77,7 +81,7 @@ const deleteCliente = async(req, res) => {
   } catch (error) {
     return res.status(500).send(error.message);
   }
-}
+};
 
 module.exports = {
   getAllClientes,

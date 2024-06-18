@@ -6,45 +6,45 @@ const { connection } = require("../../database/index");
 
 // Definimos un modelo 'Cliente' usando el objeto connection que se refiere a la tabla 'clientes' en la base de datos
 const Cliente = connection.define(
-  "cliente",
+  "client",
   {
     // Definimos una columna 'name' para almacenar el nombre del usuario
-    nombre: {
+    name: {
       type: DataTypes.STRING, // Establece el tipo de dato como cadena de texto
     },
     CIF: {
       type: DataTypes.STRING, // Establece el tipo de dato como cadena de texto
     },
-    direccion: {
+    address: {
       type: DataTypes.STRING, // Establece el tipo de dato como cadena de texto
     },
     CP: {
       type: DataTypes.STRING, // Establece el tipo de dato como cadena de texto
     },
-    ciudad: {
+    city: {
       type: DataTypes.STRING, // Establece el tipo de dato como cadena de texto
     },
-    provincia: {
+    province: {
       type: DataTypes.STRING, // Establece el tipo de dato como cadena de texto
     },
-    tarifa_recogida: {
+    collection_price: {
       type: DataTypes.INTEGER,
     },
-    tarifa_hasta_12T: {
+    until_12T_price: {
       type: DataTypes.INTEGER,
     },
-    tarifa_12T_15T: {
+    collection_12T_15T_price: {
       type: DataTypes.INTEGER,
     },
-    tarifa_Mas15T: {
+    collection_Mas15T: {
       type: DataTypes.INTEGER,
     },
-    tarifa_Valencia_3T: {
+    collection_Valencia_3T: {
       type: DataTypes.INTEGER,
     },
-    cliente_validado: {
-        type: DataTypes.BOOLEAN,
-    }
+    validated_client: {
+      type: DataTypes.BOOLEAN,
+    },
   },
   {
     // Configuración adicional para el modelo
