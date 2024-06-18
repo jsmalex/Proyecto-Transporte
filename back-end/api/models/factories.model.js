@@ -5,8 +5,8 @@ const { DataTypes } = require("sequelize");
 const { connection } = require("../../database/index");
 
 // Definimos un modelo 'Vehiculo' usando el objeto connection que se refiere a la tabla 'Vehiculos' en la base de datos
-const Vehicle = connection.define(
-  "vehicle",
+const Factory = connection.define(
+  "factory",
   {
     reference_id: {
       type: DataTypes.INTEGER,
@@ -17,17 +17,14 @@ const Vehicle = connection.define(
     CIF: {
       type: DataTypes.STRING,
     },
-    addres: {
+    address: {
       type: DataTypes.STRING,
     },
-    km: {
+    email: {
       type: DataTypes.INTEGER,
     },
-    MAM: {
+    phone: {
       type: DataTypes.INTEGER,
-    },
-    ITV_expiration: {
-      type: DataTypes.DATE,
     },
   },
   {
@@ -36,5 +33,5 @@ const Vehicle = connection.define(
   }
 );
 
-// Exportamos el modelo 'Vehiculo' para poder usarlo en otras partes de la aplicación
-module.exports = Vehicle;
+// Exportamos el modelo 'Fabrica' para poder usarlo en otras partes de la aplicación
+module.exports = Factory;
