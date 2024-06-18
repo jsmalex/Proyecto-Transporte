@@ -5,7 +5,6 @@ const morgan = require("morgan");
 const { checkDb, connection, syncModels } = require("./database/index.js");
 const initializeRelations = require("./database/relations.js");
 
-
 async function checkAndSyncMySQL() {
   try {
     await checkDb();
@@ -19,10 +18,10 @@ async function checkAndSyncMySQL() {
 const initializeExpressAndListen = () => {
   try {
     app
-      .use(express.json())
-      .use("/api", require("./api/routes/index"))
       .use(cors())
       .use(morgan("dev"))
+      .use(express.json())
+      .use("/api", require("./api/routes/index"))
       .listen(3000, () => {
         console.log("Server started");
       });
@@ -33,11 +32,11 @@ const initializeExpressAndListen = () => {
 
 const startApi = async () => {
   try {
-    await checkAndSyncMySQL()
-    initializeExpressAndListen()
+    await checkAndSyncMySQL();
+    initializeExpressAndListen();
   } catch (error) {
-    console.log(error)
+    console.log(error);
   }
-}
+};
 
 startApi();
