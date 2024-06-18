@@ -1,16 +1,16 @@
 const router = require("express").Router();
 const {
-  getAllClientes,
-  getOneCliente,
-  createCliente,
-  updateCliente,
-  deleteCliente
+  getAllClients,
+  getOneClient,
+  createClient,
+  updateClient,
+  deleteClient,
 } = require("../controllers/client.controller.js");
 
-router.get("/", getAllClientes);
-router.get("/:id", getOneCliente);
-router.post("/", createCliente);
-router.put("/:id",updateCliente);
-router.delete("/:id", deleteCliente);
+router.get("/", getAllClients);
+router.get("/:id", getOneClient);
+router.post("/", createClient);
+router.put("/:id", updateClient);
+router.delete("/:id", deleteClient);
 
 module.exports = router;

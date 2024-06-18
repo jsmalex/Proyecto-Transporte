@@ -1,19 +1,19 @@
-const Cliente = require("../models/client.model.js");
+const Client = require("../models/client.model.js");
 
-const getAllClientes = async (request, response) => {
+const getAllClients = async (request, response) => {
   try {
-    const clientes = await Cliente.findAll();
-    return response.status(200).json(clientes);
+    const clients = await Client.findAll();
+    return response.status(200).json(clients);
   } catch (error) {
     console.log(error);
   }
 };
 
-const getOneCliente = async (req, res) => {
+const getOneClient = async (req, res) => {
   try {
-    const cliente = await Cliente.findByPk(req.params.id);
+    const client = await Client.findByPk(req.params.id);
     if (cliente) {
-      return res.status(200).json(cliente);
+      return res.status(200).json(client);
     } else {
       return res.status(404).send("Client not found");
     }
@@ -22,9 +22,9 @@ const getOneCliente = async (req, res) => {
   }
 };
 
-const createCliente = async (req, res) => {
+const createClient = async (req, res) => {
   try {
-    const cliente = await Cliente.create({
+    const client = await Client.create({
       nombre: req.body.nombre,
       CIF: req.body.CIF,
       direccion: req.body.direccion,
@@ -38,17 +38,15 @@ const createCliente = async (req, res) => {
       tarifa_Valencia_3T: req.body.tarifa_Valencia_3T,
       cliente_validado: req.body.cliente_validado,
     });
-    return res
-      .status(200)
-      .json({ message: "Client created", cliente: cliente });
+    return res.status(200).json({ message: "Client created", client: client });
   } catch (error) {
     res.status(500).send(error.message);
   }
 };
 
-const updateCliente = async (req, res) => {
+const updateClient = async (req, res) => {
   try {
-    const [clienteExist, cliente] = await Cliente.update(req.body, {
+    const [clienteExist, cliente] = await Client.update(req.body, {
       returning: true,
       where: {
         id: req.params.id,
@@ -66,14 +64,14 @@ const updateCliente = async (req, res) => {
   }
 };
 
-const deleteCliente = async (req, res) => {
+const deleteClient = async (req, res) => {
   try {
-    const cliente = await Cliente.destroy({
+    const client = await Cliente.destroy({
       where: {
         id: req.params.id,
       },
     });
-    if (cliente) {
+    if (client) {
       return res.status(200).json("Client deleted");
     } else {
       return res.status(404).send("Client not found");
@@ -84,9 +82,9 @@ const deleteCliente = async (req, res) => {
 };
 
 module.exports = {
-  getAllClientes,
-  getOneCliente,
-  createCliente,
-  updateCliente,
-  deleteCliente,
+  getAllClients,
+  getOneClient,
+  createClient,
+  updateClient,
+  deleteClient,
 };

@@ -5,7 +5,7 @@ const { DataTypes } = require("sequelize");
 const { connection } = require("../../database/index");
 
 // Definimos un modelo 'Cliente' usando el objeto connection que se refiere a la tabla 'clientes' en la base de datos
-const Cliente = connection.define(
+const Client = connection.define(
   "client",
   {
     // Definimos una columna 'name' para almacenar el nombre del usuario
@@ -53,4 +53,4 @@ const Cliente = connection.define(
 );
 
 // Exportamos el modelo 'Cliente' para poder usarlo en otras partes de la aplicación
-module.exports = Cliente;
+module.exports = Client;
