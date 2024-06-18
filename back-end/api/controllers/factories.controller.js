@@ -25,13 +25,13 @@ const getOneFactory = async (req, res) => {
 const createFactory = async (req, res) => {
   try {
     const Factory = await Factory.create({
-      cliente_id: req.body.cliente_id,
-      fecha_Factory: req.body.fecha_Factory,
+      reference_id: req.body.reference_id,
+      name: req.body.name,
       fecha_carga: req.body.fecha_carga,
-      carga_total_estimada: req.body.carga_total_estimada,
-      carga_total_real: req.body.carga_total_real,
-      documentacion: req.body.documentacion,
-      observaciones: req.body.observaciones,
+      CIF: req.body.CIF,
+      address: req.body.address,
+      email: req.body.email,
+      phone: req.body.phone,
     });
     return res.status(200).json({ message: "Order created", Factory: Factory });
   } catch (error) {

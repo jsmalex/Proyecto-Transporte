@@ -25,13 +25,13 @@ const getOneVehicle = async (req, res) => {
 const createVehicle = async (req, res) => {
   try {
     const Vehicle = await Vehicle.create({
-      cliente_id: req.body.cliente_id,
-      fecha_Vehicle: req.body.fecha_Vehicle,
-      fecha_carga: req.body.fecha_carga,
-      carga_total_estimada: req.body.carga_total_estimada,
-      carga_total_real: req.body.carga_total_real,
-      documentacion: req.body.documentacion,
-      observaciones: req.body.observaciones,
+      employee_id: req.body.cliente_id,
+      registration: req.body.registration,
+      brand: req.body.brand,
+      model: req.body.model,
+      km: req.body.km,
+      MAM: req.body.MAM,
+      ITV_expiration: req.body.ITV_expiration,
     });
     return res.status(200).json({ message: "Order created", Vehicle: Vehicle });
   } catch (error) {
