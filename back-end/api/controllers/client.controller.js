@@ -25,18 +25,18 @@ const getOneClient = async (req, res) => {
 const createClient = async (req, res) => {
   try {
     const client = await Client.create({
-      nombre: req.body.nombre,
+      name: req.body.name,
       CIF: req.body.CIF,
-      direccion: req.body.direccion,
+      address: req.body.address,
       CP: req.body.CP,
-      ciudad: req.body.ciudad,
-      provincia: req.body.provincia,
-      tarifa_recogida: req.body.tarifa_recogida,
-      tarifa_hasta_12T: req.body.tarifa_hasta_12T,
-      tarifa_12T_15T: req.body.tarifa_12T_15T,
-      tarifa_Mas15T: req.body.tarifa_Mas15T,
-      tarifa_Valencia_3T: req.body.tarifa_Valencia_3T,
-      cliente_validado: req.body.cliente_validado,
+      city: req.body.city,
+      province: req.body.province,
+      collection_price: req.body.collection_price,
+      until_12T_price: req.body.until_12T_price,
+      collection_12T_15T_price: req.body.collection_12T_15T_price,
+      collection_Over15T: req.body.collection_Over15T,
+      collection_Valencia_3T: req.body.collection_Valencia_3T,
+      validated_client: req.body.validated_client,
     });
     return res.status(200).json({ message: "Client created", client: client });
   } catch (error) {
