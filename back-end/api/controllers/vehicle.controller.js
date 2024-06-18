@@ -1,4 +1,4 @@
-const Vehicle = require("../models/vehicles.model.js");
+const Vehicle = require("../models/vehicle.model.js");
 
 const getAllVehicles = async (request, response) => {
   try {
@@ -15,7 +15,7 @@ const getOneVehicle = async (req, res) => {
     if (Vehicle) {
       return res.status(200).json(Vehicle);
     } else {
-      return res.status(404).send("Order not found");
+      return res.status(404).send("Vehicle not found");
     }
   } catch (error) {
     res.status(500).send(error.message);
@@ -24,8 +24,8 @@ const getOneVehicle = async (req, res) => {
 
 const createVehicle = async (req, res) => {
   try {
-    const Vehicle = await Vehicle.create({
-      employee_id: req.body.cliente_id,
+    const vehicle = await Vehicle.create({
+      employee_id: req.body.employee_id,
       registration: req.body.registration,
       brand: req.body.brand,
       model: req.body.model,
@@ -33,7 +33,9 @@ const createVehicle = async (req, res) => {
       MAM: req.body.MAM,
       ITV_expiration: req.body.ITV_expiration,
     });
-    return res.status(200).json({ message: "Order created", Vehicle: Vehicle });
+    return res
+      .status(200)
+      .json({ message: "Vehicle created", vehicle: vehicle });
   } catch (error) {
     res.status(500).send(error.message);
   }
@@ -41,18 +43,15 @@ const createVehicle = async (req, res) => {
 
 const updateVehicle = async (req, res) => {
   try {
-    const [VehicleExist, Vehicle] = await Vehicle.update(req.body, {
-      returning: true,
-      where: {
-        id: req.params.id,
-      },
-    });
-    if (VehicleExist !== 0) {
+    const vehicle = await Vehicle.findByPk(req.params.id);
+    const updatedVehicle = await vehicle.update(req.body);
+    vehicle.save();
+    if (updatedVehicle) {
       return res
         .status(200)
-        .json({ message: "Order updated", Vehicle: Vehicle });
+        .json({ message: "Vehicle updated", Vehicle: updatedVehicle });
     } else {
-      return res.status(404).send("Order not found");
+      return res.status(404).send("Vehicle not found");
     }
   } catch (error) {
     return res.status(500).send(error.message);
@@ -61,15 +60,15 @@ const updateVehicle = async (req, res) => {
 
 const deleteVehicle = async (req, res) => {
   try {
-    const Vehicle = await Vehicle.destroy({
+    const vehicle = await Vehicle.destroy({
       where: {
         id: req.params.id,
       },
     });
-    if (Vehicle) {
-      return res.status(200).json("Order deleted");
+    if (vehicle) {
+      return res.status(200).json("Vehicle deleted");
     } else {
-      return res.status(404).send("Order not found");
+      return res.status(404).send("Vehicle not found");
     }
   } catch (error) {
     return res.status(500).send(error.message);

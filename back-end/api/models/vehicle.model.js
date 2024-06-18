@@ -11,7 +11,7 @@ const Vehicle = connection.define(
     employee_id: {
       type: DataTypes.INTEGER,
     },
-    registration_car: {
+    registration: {
       type: DataTypes.STRING,
     },
     brand: {

@@ -5,7 +5,7 @@ const router = require("express").Router();
 router.use("/client", require("./client.router"));
 router.use("/order", require("./order.router"));
 router.use("/vehicle", require("./vehicle.router"));
-router.use("/factory", require("./factories.router"));
+router.use("/factory", require("./factory.router"));
 
 // Exportamos el enrutador para que pueda ser utilizado por otros archivos en nuestra aplicación.
 module.exports = router;

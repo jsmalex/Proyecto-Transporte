@@ -1,7 +1,7 @@
 const client = require("../api/models/client.model");
 const order = require("../api/models/order.model");
-const vehicle = require("../api/models/vehicles.model");
-const factory = require("../api/models/factories.model");
+const vehicle = require("../api/models/vehicle.model");
+const factory = require("../api/models/factory.model");
 
 const initializeRelations = () => {
   try {

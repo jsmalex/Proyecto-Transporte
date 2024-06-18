@@ -36,10 +36,10 @@ const Client = connection.define(
     collection_12T_15T_price: {
       type: DataTypes.INTEGER,
     },
-    collection_Over15T: {
+    collection_Over15T_price: {
       type: DataTypes.INTEGER,
     },
-    collection_Valencia_3T: {
+    Valencia_3T_price: {
       type: DataTypes.INTEGER,
     },
     validated_client: {

@@ -1,3 +1,4 @@
+const e = require("express");
 const Client = require("../models/client.model.js");
 
 const getAllClients = async (request, response) => {
@@ -12,7 +13,7 @@ const getAllClients = async (request, response) => {
 const getOneClient = async (req, res) => {
   try {
     const client = await Client.findByPk(req.params.id);
-    if (cliente) {
+    if (client) {
       return res.status(200).json(client);
     } else {
       return res.status(404).send("Client not found");
@@ -23,6 +24,7 @@ const getOneClient = async (req, res) => {
 };
 
 const createClient = async (req, res) => {
+  console.log("llegue");
   try {
     const client = await Client.create({
       name: req.body.name,
@@ -34,28 +36,28 @@ const createClient = async (req, res) => {
       collection_price: req.body.collection_price,
       until_12T_price: req.body.until_12T_price,
       collection_12T_15T_price: req.body.collection_12T_15T_price,
-      collection_Over15T: req.body.collection_Over15T,
-      collection_Valencia_3T: req.body.collection_Valencia_3T,
+      collection_Over15T_price: req.body.collection_Over15T_price,
+      Valencia_3T_price: req.body.Valencia_3T_price,
       validated_client: req.body.validated_client,
     });
+    console.log("termine");
     return res.status(200).json({ message: "Client created", client: client });
   } catch (error) {
+    console.log(error);
     res.status(500).send(error.message);
   }
 };
 
 const updateClient = async (req, res) => {
   try {
-    const [clienteExist, cliente] = await Client.update(req.body, {
-      returning: true,
-      where: {
-        id: req.params.id,
-      },
-    });
-    if (clienteExist !== 0) {
+    const client = await Client.findByPk(req.params.id);
+    const updatedClient = await client.update(req.body);
+    client.save();
+    console.log(updateClient)
+    if (updatedClient) {
       return res
         .status(200)
-        .json({ message: "Client updated", cliente: cliente });
+        .json({ message: "Client updated", cliente: updatedClient });
     } else {
       return res.status(404).send("Client not found");
     }
@@ -66,7 +68,7 @@ const updateClient = async (req, res) => {
 
 const deleteClient = async (req, res) => {
   try {
-    const client = await Cliente.destroy({
+    const client = await Client.destroy({
       where: {
         id: req.params.id,
       },

@@ -5,7 +5,7 @@ const {
   createFactory,
   updateFactory,
   deleteFactory,
-} = require("../controllers/factories.controller.js");
+} = require("../controllers/factory.controller.js");
 
 router.get("/", getAllFactories);
 router.get("/:id", getOneFactory);

@@ -12,7 +12,7 @@ const getAllOrders = async (request, response) => {
 const getOneOrder = async (req, res) => {
   try {
     const order = await Order.findByPk(req.params.id);
-    if (Order) {
+    if (order) {
       return res.status(200).json(order);
     } else {
       return res.status(404).send("Order not found");
@@ -25,11 +25,11 @@ const getOneOrder = async (req, res) => {
 const createOrder = async (req, res) => {
   try {
     const order = await Order.create({
-      cliente_id: req.body.cliente_id,
+      client_id: req.body.client_id,
       date_order: req.body.date_order,
       date_load: req.body.date_load,
-      total_load_estimated: req.body.total_load_estimated,
-      total_load_real: req.body.total_load_real,
+      total_estimated_load: req.body.total_estimated_load,
+      total_real_load: req.body.total_real_load,
       documentation: req.body.documentation,
       observations: req.body.observations,
     });
@@ -41,14 +41,13 @@ const createOrder = async (req, res) => {
 
 const updateOrder = async (req, res) => {
   try {
-    const [orderExist, order] = await order.update(req.body, {
-      returning: true,
-      where: {
-        id: req.params.id,
-      },
-    });
-    if (orderExist !== 0) {
-      return res.status(200).json({ message: "Order updated", Order: order });
+    const order = await Order.findByPk(req.params.id);
+    const updatedOrder = await order.update(req.body);
+    order.save();
+    if (updatedOrder) {
+      return res
+        .status(200)
+        .json({ message: "Order updated", Order: updatedOrder });
     } else {
       return res.status(404).send("Order not found");
     }
