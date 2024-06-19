@@ -8,7 +8,7 @@ const { connection } = require("../../database/index");
 const Order = connection.define(
   "order",
   {
-    client_id: {
+    user_id: {
       type: DataTypes.INTEGER,
     },
     date_order: {

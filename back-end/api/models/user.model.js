@@ -4,13 +4,18 @@ const { DataTypes } = require("sequelize");
 // Importamos el objeto connection desde una ruta relativa, que maneja la conexión con nuestra base de datos
 const { connection } = require("../../database/index");
 
-// Definimos un modelo 'Cliente' usando el objeto connection que se refiere a la tabla 'clientes' en la base de datos
-const Client = connection.define(
-  "client",
+// Definimos un modelo 'Usuario' usando el objeto connection que se refiere a la tabla 'usuarios' en la base de datos
+const User = connection.define(
+  "user",
   {
     // Definimos una columna 'name' para almacenar el nombre del usuario
     name: {
       type: DataTypes.STRING, // Establece el tipo de dato como cadena de texto
+    },
+    role: {
+      type: DataTypes.ENUM({
+        values: ["admin", "client"],
+      }),
     },
     CIF: {
       type: DataTypes.STRING, // Establece el tipo de dato como cadena de texto
@@ -42,7 +47,7 @@ const Client = connection.define(
     Valencia_3T_price: {
       type: DataTypes.INTEGER,
     },
-    validated_client: {
+    validated_user: {
       type: DataTypes.BOOLEAN,
     },
   },
@@ -52,5 +57,5 @@ const Client = connection.define(
   }
 );
 
-// Exportamos el modelo 'Cliente' para poder usarlo en otras partes de la aplicación
-module.exports = Client;
+// Exportamos el modelo 'usuario' para poder usarlo en otras partes de la aplicación
+module.exports = User;

@@ -4,7 +4,7 @@ const { connection } = require("../../database/index");
 const Phone = connection.define(
   "phone",
   {
-    client_id: {
+    user_id: {
       type: DataTypes.INTEGER,
     },
     phone: {

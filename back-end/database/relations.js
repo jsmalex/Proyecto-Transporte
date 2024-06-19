@@ -1,4 +1,4 @@
-const client = require("../api/models/client.model");
+const user = require("../api/models/user.model");
 const order = require("../api/models/order.model");
 const vehicle = require("../api/models/vehicle.model");
 const factory = require("../api/models/factory.model");
