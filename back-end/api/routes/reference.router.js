@@ -1,4 +1,5 @@
 const router = require("express").Router();
+const { checkAuth, checkAdmin } = require("../middlewares/auth.js");
 const {
   getAllReferences,
   getOneReference,
@@ -7,10 +8,10 @@ const {
   deleteReference,
 } = require("../controllers/reference.controller.js");
 
-router.get("/", getAllReferences);
-router.get("/:id", getOneReference);
-router.post("/", createReference);
-router.put("/:id", updateReference);
-router.delete("/:id", deleteReference);
+router.get("/", checkAuth, getAllReferences);
+router.get("/:id", checkAuth, getOneReference);
+router.post("/", checkAuth, createReference);
+router.put("/:id", checkAuth, updateReference);
+router.delete("/:id", checkAuth, deleteReference);
 
 module.exports = router;

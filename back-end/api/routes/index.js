@@ -10,6 +10,7 @@ router.use("/email", require("./email.router"));
 router.use("/employee", require("./employee.router"));
 router.use("/reference", require("./reference.router"));
 router.use("/phone", require("./phone.router"));
+router.use("/auth", require("./auth.router"));
 
 // Exportamos el enrutador para que pueda ser utilizado por otros archivos en nuestra aplicación.
 module.exports = router;

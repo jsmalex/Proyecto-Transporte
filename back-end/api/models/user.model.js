@@ -12,13 +12,17 @@ const User = connection.define(
     name: {
       type: DataTypes.STRING, // Establece el tipo de dato como cadena de texto
     },
+    password: {
+      type: DataTypes.STRING, // Establece el tipo de dato como cadena de texto
+    },
     role: {
       type: DataTypes.ENUM({
         values: ["admin", "client"],
       }),
     },
     CIF: {
-      type: DataTypes.STRING, // Establece el tipo de dato como cadena de texto
+      type: DataTypes.STRING,
+      unique: true,
     },
     address: {
       type: DataTypes.STRING, // Establece el tipo de dato como cadena de texto
@@ -49,6 +53,7 @@ const User = connection.define(
     },
     validated_client: {
       type: DataTypes.BOOLEAN,
+      defaultValue: false,
     },
   },
   {
@@ -59,3 +64,21 @@ const User = connection.define(
 
 // Exportamos el modelo 'usuario' para poder usarlo en otras partes de la aplicación
 module.exports = User;
+/*
+  {
+    "name": "lolo",
+    "password": "me cago en tu puta madre, hijo de puta",
+    "CIF": "AAAA3333",
+    "role": "client",
+    "address": "sucasa",
+    "CP": "35620",
+    "city": "lasity",
+    "province": "LP",
+    "collection_price": 40,
+    "until_12T_price": 45,
+    "collection_12T_15T_price": 50,
+    "over15T_price": 60,
+    "Valencia_3T_price": 70,
+    "validated_client": false
+  }
+*/

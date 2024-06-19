@@ -16,6 +16,7 @@ const Factory = connection.define(
     },
     CIF: {
       type: DataTypes.STRING,
+      unique: true,
     },
     address: {
       type: DataTypes.STRING,

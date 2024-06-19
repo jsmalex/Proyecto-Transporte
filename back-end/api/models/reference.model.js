@@ -6,6 +6,7 @@ const Reference = connection.define(
   {
     code_ref: {
       type: DataTypes.STRING,
+      unique: true,
     },
   },
   {

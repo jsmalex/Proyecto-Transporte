@@ -1,4 +1,5 @@
 const router = require("express").Router();
+const { checkAuth, checkAdmin } = require("../middlewares/auth.js");
 const {
   getAllOrders,
   getOneOrder,
@@ -7,10 +8,10 @@ const {
   deleteOrder,
 } = require("../controllers/order.controller.js");
 
-router.get("/", getAllOrders);
-router.get("/:id", getOneOrder);
-router.post("/", createOrder);
-router.put("/:id", updateOrder);
-router.delete("/:id", deleteOrder);
+router.get("/", checkAuth, getAllOrders);
+router.get("/:id", checkAuth, getOneOrder);
+router.post("/", checkAuth, createOrder);
+router.put("/:id", checkAuth, updateOrder);
+router.delete("/:id", checkAuth, deleteOrder);
 
 module.exports = router;

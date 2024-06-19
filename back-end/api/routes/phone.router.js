@@ -1,4 +1,5 @@
 const router = require("express").Router();
+const { checkAuth, checkAdmin } = require("../middlewares/auth.js");
 const {
   getAllPhones,
   getOnePhone,
@@ -7,10 +8,10 @@ const {
   deletePhone,
 } = require("../controllers/phone.controller.js");
 
-router.get("/", getAllPhones);
-router.get("/:id", getOnePhone);
-router.post("/", createPhone);
-router.put("/:id", updatePhone);
-router.delete("/:id", deletePhone);
+router.get("/", checkAuth, getAllPhones);
+router.get("/:id", checkAuth, getOnePhone);
+router.post("/", checkAuth, createPhone);
+router.put("/:id", checkAuth, updatePhone);
+router.delete("/:id", checkAuth, deletePhone);
 
 module.exports = router;

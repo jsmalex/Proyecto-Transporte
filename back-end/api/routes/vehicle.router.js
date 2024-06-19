@@ -1,4 +1,5 @@
 const router = require("express").Router();
+const { checkAuth, checkAdmin } = require("../middlewares/auth.js");
 const {
   getAllVehicles,
   getOneVehicle,
@@ -7,10 +8,10 @@ const {
   deleteVehicle,
 } = require("../controllers/vehicle.controller.js");
 
-router.get("/", getAllVehicles);
-router.get("/:id", getOneVehicle);
-router.post("/", createVehicle);
-router.put("/:id", updateVehicle);
-router.delete("/:id", deleteVehicle);
+router.get("/", checkAuth, getAllVehicles);
+router.get("/:id", checkAuth, getOneVehicle);
+router.post("/", checkAuth, createVehicle);
+router.put("/:id", checkAuth, updateVehicle);
+router.delete("/:id", checkAuth, deleteVehicle);
 
 module.exports = router;

@@ -1,4 +1,5 @@
 const router = require("express").Router();
+const { checkAuth, checkAdmin } = require("../middlewares/auth.js");
 const {
   getAllEmails,
   getOneEmail,
@@ -7,10 +8,10 @@ const {
   deleteEmail,
 } = require("../controllers/email.controller.js");
 
-router.get("/", getAllEmails);
-router.get("/:id", getOneEmail);
-router.post("/", createEmail);
-router.put("/:id", updateEmail);
-router.delete("/:id", deleteEmail);
+router.get("/", checkAuth, getAllEmails);
+router.get("/:id", checkAuth, getOneEmail);
+router.post("/", checkAuth, createEmail);
+router.put("/:id", checkAuth, updateEmail);
+router.delete("/:id", checkAuth, deleteEmail);
 
 module.exports = router;

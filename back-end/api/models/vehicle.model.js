@@ -10,6 +10,7 @@ const Vehicle = connection.define(
   {
     registration: {
       type: DataTypes.STRING,
+      unique: true,
     },
     brand: {
       type: DataTypes.STRING,
