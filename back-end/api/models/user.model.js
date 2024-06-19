@@ -41,13 +41,13 @@ const User = connection.define(
     collection_12T_15T_price: {
       type: DataTypes.INTEGER,
     },
-    collection_Over15T_price: {
+    over15T_price: {
       type: DataTypes.INTEGER,
     },
     Valencia_3T_price: {
       type: DataTypes.INTEGER,
     },
-    validated_user: {
+    validated_client: {
       type: DataTypes.BOOLEAN,
     },
   },

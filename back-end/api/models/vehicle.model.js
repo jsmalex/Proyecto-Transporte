@@ -8,9 +8,6 @@ const { connection } = require("../../database/index");
 const Vehicle = connection.define(
   "vehicle",
   {
-    employee_id: {
-      type: DataTypes.INTEGER,
-    },
     registration: {
       type: DataTypes.STRING,
     },

@@ -7,9 +7,6 @@ const Reference = connection.define(
     code_ref: {
       type: DataTypes.STRING,
     },
-    order_id: {
-      type: DataTypes.INTEGER,
-    }
   },
   {
     // Configuración adicional para el modelo

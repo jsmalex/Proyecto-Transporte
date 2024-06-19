@@ -37,9 +37,9 @@ const createUser = async (req, res) => {
       collection_price: req.body.collection_price,
       until_12T_price: req.body.until_12T_price,
       collection_12T_15T_price: req.body.collection_12T_15T_price,
-      collection_Over15T_price: req.body.collection_Over15T_price,
+      over15T_price: req.body.over15T_price,
       Valencia_3T_price: req.body.Valencia_3T_price,
-      validated_User: req.body.validated_User,
+      validated_client: req.body.validated_client,
     });
     console.log("termine");
     return res.status(200).json({ message: "User created", User: user });

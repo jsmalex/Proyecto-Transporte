@@ -4,9 +4,6 @@ const { connection } = require("../../database/index");
 const Email = connection.define(
   "email",
   {
-    user_id: {
-      type: DataTypes.INTEGER,
-    },
     email: {
       type: DataTypes.STRING,
     },

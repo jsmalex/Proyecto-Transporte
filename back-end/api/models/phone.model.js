@@ -4,12 +4,9 @@ const { connection } = require("../../database/index");
 const Phone = connection.define(
   "phone",
   {
-    user_id: {
-      type: DataTypes.INTEGER,
-    },
     phone: {
       type: DataTypes.STRING,
-    }
+    },
   },
   {
     // Configuración adicional para el modelo
