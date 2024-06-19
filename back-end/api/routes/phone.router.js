@@ -8,7 +8,7 @@ const {
   deletePhone,
 } = require("../controllers/phone.controller.js");
 
-router.get("/", checkAuth, getAllPhones);
+router.get("/", checkAuth, checkAdmin, getAllPhones);
 router.get("/:id", checkAuth, getOnePhone);
 router.post("/", checkAuth, createPhone);
 router.put("/:id", checkAuth, updatePhone);

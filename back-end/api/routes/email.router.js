@@ -8,7 +8,7 @@ const {
   deleteEmail,
 } = require("../controllers/email.controller.js");
 
-router.get("/", checkAuth, getAllEmails);
+router.get("/", checkAuth, checkAdmin, getAllEmails);
 router.get("/:id", checkAuth, getOneEmail);
 router.post("/", checkAuth, createEmail);
 router.put("/:id", checkAuth, updateEmail);

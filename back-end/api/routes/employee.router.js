@@ -8,7 +8,7 @@ const {
   deleteEmployee,
 } = require("../controllers/employee.controller.js");
 
-router.get("/", checkAuth, getAllEmployees);
+router.get("/", checkAuth, checkAdmin, getAllEmployees);
 router.get("/:id", checkAuth, getOneEmployee);
 router.post("/", checkAuth, createEmployee);
 router.put("/:id", checkAuth, updateEmployee);

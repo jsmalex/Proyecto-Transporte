@@ -8,7 +8,7 @@ const {
   deleteOrder,
 } = require("../controllers/order.controller.js");
 
-router.get("/", checkAuth, getAllOrders);
+router.get("/", checkAuth, checkAdmin, getAllOrders);
 router.get("/:id", checkAuth, getOneOrder);
 router.post("/", checkAuth, createOrder);
 router.put("/:id", checkAuth, updateOrder);

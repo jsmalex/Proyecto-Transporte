@@ -8,7 +8,7 @@ const {
   deleteReference,
 } = require("../controllers/reference.controller.js");
 
-router.get("/", checkAuth, getAllReferences);
+router.get("/", checkAuth, checkAdmin, getAllReferences);
 router.get("/:id", checkAuth, getOneReference);
 router.post("/", checkAuth, createReference);
 router.put("/:id", checkAuth, updateReference);
