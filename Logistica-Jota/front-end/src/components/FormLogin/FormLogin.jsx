@@ -1,6 +1,6 @@
 import { useState } from 'react'
-//import { signup } from '../service/auth'
 import { useNavigate } from 'react-router-dom'
+import "./FormLogin.css"
 
 const FormSignup = () => {
   const [CIF, setCIF] = useState()
@@ -8,10 +8,8 @@ const FormSignup = () => {
 
   const navigate = useNavigate()
 
-
   const handleSignUp = async () => {
-
-    navigate('/login')
+    navigate('/')
     /* let data = { CIF: CIF, password: password }
     //const result = await signup(data)
     localStorage.setItem('CIF', result.CIF)
@@ -21,21 +19,30 @@ const FormSignup = () => {
   }
 
   return (
-    <div>
+    <>
       <form action="">
-        <input
-          onChange={(e) => {
-            setCIF(e.target.value)
-          }}
-          required
-        />
-        <input
-          type="password"
-          onChange={(e) => {
-            setPassword(e.target.value)
-          }}
-          required
-        />
+        <h1>Iniciar sesion</h1>
+        <div>
+          <label>CIF</label>
+          <input
+            onChange={(e) => {
+              setCIF(e.target.value)
+            }}
+            required
+            placeholder="Introduce tu CIF"
+          />
+        </div>
+        <div>
+          <label htmlFor="">Contraseña</label>
+          <input
+            type="password"
+            onChange={(e) => {
+              setPassword(e.target.value)
+            }}
+            required
+            placeholder="Introduce tu contraseña"
+          />
+        </div>
 
         <button
           onClick={(e) => {
@@ -46,7 +53,7 @@ const FormSignup = () => {
           Registrarse
         </button>
       </form>
-    </div>
+    </>
   )
 }
 
