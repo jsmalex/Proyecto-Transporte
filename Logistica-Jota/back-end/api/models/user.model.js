@@ -19,6 +19,7 @@ const User = connection.define(
       type: DataTypes.ENUM({
         values: ["admin", "client"],
       }),
+      defaultValue: "client",
     },
     CIF: {
       type: DataTypes.STRING,
@@ -38,18 +39,23 @@ const User = connection.define(
     },
     collection_price: {
       type: DataTypes.INTEGER,
+      defaultValue: 0,
     },
     until_12T_price: {
       type: DataTypes.INTEGER,
+      defaultValue: 0,
     },
     collection_12T_15T_price: {
       type: DataTypes.INTEGER,
+      defaultValue: 0,
     },
     over15T_price: {
       type: DataTypes.INTEGER,
+      defaultValue: 0,
     },
     Valencia_3T_price: {
       type: DataTypes.INTEGER,
+      defaultValue: 0,
     },
     validated_client: {
       type: DataTypes.BOOLEAN,

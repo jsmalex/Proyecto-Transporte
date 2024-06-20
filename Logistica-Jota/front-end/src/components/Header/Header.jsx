@@ -5,25 +5,20 @@ const Header = () => {
     const navigate = useNavigate();
   return (
     <div className="header">
+      <a href="/">
         <img src="/src/assets/logo.jpg" alt="Logo de la empresa" />
+      </a>
 
-        <nav>
-            <a href="">Servicios</a>
-            <a href="">Sobre Nosotros</a>
-            <a href="">Contacto</a>
-        </nav>
-      
-        <div className="botones">
+      <nav>
+        <a href="/services">Servicios</a>
+        <a href="/aboutUs">Sobre Nosotros</a>
+        <a href="/contact">Contacto</a>
+      </nav>
 
-            <button
-                onClick={() =>
-                navigate('/signUp')
-                }
-            >
-                Registrate
-            </button>
-            <button onClick={() => navigate('/login')}>Accede</button>
-        </div>
+      <div className="botones">
+        <button onClick={() => navigate('/signUp')}>Registrate</button>
+        <button onClick={() => navigate('/login')}>Accede</button>
+      </div>
     </div>
   )
 }
