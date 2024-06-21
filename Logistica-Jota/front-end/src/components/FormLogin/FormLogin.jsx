@@ -14,7 +14,6 @@ const FormSignup = () => {
     try {
       let data = { CIF: CIF, password: password }
       const result = await login(data)
-      console.log(result);
       localStorage.setItem('token', result.token)
       navigate("/HomeClient") 
     }catch(error) {
@@ -26,7 +25,7 @@ const FormSignup = () => {
     <>
       <Toaster />
       <form action="">
-        <h1>Iniciar sesion</h1>
+        <h2>Iniciar sesion</h2>
 
         <div>
           <label>CIF</label>

@@ -1,0 +1,11 @@
+.validada{
+    color : green
+}
+
+.no-validada{
+    color : red
+}
+
+span{
+    font-weight: 900;
+}

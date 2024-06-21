@@ -18,9 +18,9 @@ const RegisterOK = () => {
       <p>
         Su solicitud se ha tramitado correctamente. Procederemos a la VALIDACIÓN
         de su cuenta y nos pondremos en contacto con usted a la mayor brevedad
-        posible. Gracias
+        posible.
       </p>
-      <a href="/HomeClient">Volver a inicio</a>
+      <a href="/HomeClient">Ir a mi página de inicio</a>
     </>
   )
 }

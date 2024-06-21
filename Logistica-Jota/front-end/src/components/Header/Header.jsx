@@ -16,10 +16,11 @@ const Header = () => {
       </nav>
 
       <div className="botones">
-        {localStorage.token ? (
+        {localStorage.token ? (//Si estoy logueado (tengo el token) muestro un boton para cerrar sesion y un enlace par ir a mi pagina principal. Si no estoy logueado muestro los dos botones de registrarte e iniciar sesion.
           <>
+            <a href="/HomeClient">Mi Sitio</a>
             <button onClick={() =>{ 
-              localStorage.removeItem("token")
+              localStorage.removeItem("token")//destruyo el token si cierro sesion para que ocurra el cambio de botones
               navigate('/')}}>Cerrar Sesion</button>
           </>
         ) : (
