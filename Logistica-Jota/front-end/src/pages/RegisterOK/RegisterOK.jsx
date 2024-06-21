@@ -20,6 +20,7 @@ const RegisterOK = () => {
         de su cuenta y nos pondremos en contacto con usted a la mayor brevedad
         posible. Gracias
       </p>
+      <a href="/HomeClient">Volver a inicio</a>
     </>
   )
 }

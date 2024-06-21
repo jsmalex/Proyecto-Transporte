@@ -7,6 +7,7 @@ import Services from '../pages/Services/Services'
 import AboutUs from '../pages/AboutUs/AboutUs'
 import Contact from '../pages/Contact/Contact'
 import RegisterOK from '../pages/RegisterOK/RegisterOK'
+import HomeClient from '../pages/HomeClient/HomeClient'
 
 
 const router = createBrowserRouter([
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
       {
         path: '/registerOK',
         element: <RegisterOK />,
+      },
+      {
+        path: '/HomeClient',
+        element: <HomeClient />,
       },
     ],
   },

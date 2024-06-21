@@ -24,7 +24,6 @@ const getOneUser = async (req, res) => {
 };
 
 const createUser = async (req, res) => {
-  console.log("llegue");
   try {
     const user = await User.create({
       name: req.body.name,
@@ -42,7 +41,6 @@ const createUser = async (req, res) => {
       Valencia_3T_price: req.body.Valencia_3T_price,
       validated_client: req.body.validated_client,
     });
-    console.log("termine");
     return res.status(200).json({ message: "User created", User: user });
   } catch (error) {
     console.log(error);
@@ -85,10 +83,25 @@ const deleteUser = async (req, res) => {
   }
 };
 
+const getProfile = async (req, res) => {
+  console.log(res);
+  try {
+    const user = await User.findByPk(res.locals.user.id);
+    if (user) {
+      return res.status(200).json(user);
+    } else {
+      return res.status(404).send("User not found");
+    }
+  } catch (error) {
+    res.status(500).send(error.message);
+  }
+};
+
 module.exports = {
   getAllUsers,
   getOneUser,
   createUser,
   updateUser,
   deleteUser,
+  getProfile,
 };

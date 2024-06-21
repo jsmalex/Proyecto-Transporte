@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import "./FormLogin.css"
+import toast, { Toaster } from 'react-hot-toast'
+import { login } from '../../services/auth'
 
 const FormSignup = () => {
   const [CIF, setCIF] = useState()
@@ -8,20 +10,24 @@ const FormSignup = () => {
 
   const navigate = useNavigate()
 
-  const handleSignUp = async () => {
-    navigate('/')
-    /* let data = { CIF: CIF, password: password }
-    //const result = await signup(data)
-    localStorage.setItem('CIF', result.CIF)
-    localStorage.setItem('token', result.token)
-    localStorage.setItem('role', result.role)
-    setEmail('') */
+  const handleLogin= async () => {
+    try {
+      let data = { CIF: CIF, password: password }
+      const result = await login(data)
+      console.log(result);
+      localStorage.setItem('token', result.token)
+      navigate("/HomeClient") 
+    }catch(error) {
+      toast.error('Credenciales inválidas')
+    }
   }
 
   return (
     <>
+      <Toaster />
       <form action="">
         <h1>Iniciar sesion</h1>
+
         <div>
           <label>CIF</label>
           <input
@@ -32,6 +38,7 @@ const FormSignup = () => {
             placeholder="Introduce tu CIF"
           />
         </div>
+
         <div>
           <label htmlFor="">Contraseña</label>
           <input
@@ -47,10 +54,10 @@ const FormSignup = () => {
         <button
           onClick={(e) => {
             e.preventDefault()
-            handleSignUp()
+            handleLogin()
           }}
         >
-          Registrarse
+          Iniciar sesión
         </button>
       </form>
     </>

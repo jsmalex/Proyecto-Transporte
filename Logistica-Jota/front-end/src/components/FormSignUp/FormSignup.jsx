@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import "./FormSignUp.css"
-import signUp from '../../services/signUp'
 import toast, { Toaster } from 'react-hot-toast'
+import { signUp } from '../../services/auth'
 
 const FormSignup = () => {
   const [name, setName] = useState()

@@ -27,18 +27,18 @@ const signUp = async (req, res) => {
     const user = await User.create({
       name: req.body.name,
       password: req.body.password,
-      role: req.body.role,
+      //role: req.body.role,
       CIF: req.body.CIF,
       address: req.body.address,
       CP: req.body.CP,
       city: req.body.city,
       province: req.body.province,
-      collection_price: req.body.collection_price,
+      /* collection_price: req.body.collection_price,
       until_12T_price: req.body.until_12T_price,
       collection_12T_15T_price: req.body.collection_12T_15T_price,
       over15T_price: req.body.over15T_price,
       Valencia_3T_price: req.body.Valencia_3T_price,
-      validated_client: req.body.validated_client,
+      validated_client: req.body.validated_client, */
     });
 
     // Creamos el payload del token, incluyendo el CIF del usuario
