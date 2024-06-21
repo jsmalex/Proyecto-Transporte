@@ -5,18 +5,22 @@ import toast, { Toaster } from 'react-hot-toast'
 import { signUp } from '../../services/auth'
 
 const FormSignup = () => {
-  const [name, setName] = useState()
-  const [password, setPassword] = useState()
-  const [CIF, setCIF] = useState()
-  const [address, setAddress] = useState()
-  const [CP, setCP]= useState()
-  const [city, setCity] = useState();
-  const [province, setProvince] = useState()
+  const [name, setName] = useState('')
+  const [password, setPassword] = useState('')
+  const [CIF, setCIF] = useState('')
+  const [address, setAddress] = useState('')
+  const [CP, setCP]= useState('')
+  const [city, setCity] = useState('');
+  const [province, setProvince] = useState('')
 
   const navigate = useNavigate()
 
 
   const handleSignUp = async () => {
+    if (name.length === 0 || password.length === 0 ||CIF.length === 0 ||address.length === 0 ||CP.length === 0 ||city.length === 0 ||province.length === 0 ) {
+      return toast.error('Introduce todos los campos del formulario')
+    }
+
     try {
        let data = {
       name: name,

@@ -1,11 +1,28 @@
-import "./ClientProfile.css"
-import React from 'react'
+import './ClientProfile.css'
+import { getClientInformation } from '../../services/clientInformation'
+import { useEffect, useState } from 'react'
 
 const ClientProfile = () => {
+  const [datosCliente, setDatosCliente] = useState({})
+
+  useEffect(() => {
+    handleGetClientInformation()
+  }, [])
+
+  const handleGetClientInformation = async () => {
+    const result = await getClientInformation()
+    setDatosCliente(result)
+  }
+
+  console.log(datosCliente)
   return (
     <>
-        <div>Esta es la ficha del cliente</div>
-        <p>{localStorage.token}</p>
+      <p>{datosCliente.name}</p>
+      <br />
+      <p>{datosCliente.CIF}</p>
+      <br />
+      <p>{datosCliente.city}</p>
+      <br />
     </>
   )
 }

@@ -6,7 +6,7 @@ const Header = () => {
   return (
     <div className="header">
       <a href="/">
-        <img src="/src/assets/logo.jpg" alt="Logo de la empresa" />
+        <img src="/src/assets/img/logo.jpg" alt="Logo de la empresa" />
       </a>
 
       <nav>
@@ -16,8 +16,18 @@ const Header = () => {
       </nav>
 
       <div className="botones">
-        <button onClick={() => navigate('/signUp')}>Registrate</button>
-        <button onClick={() => navigate('/login')}>Accede</button>
+        {localStorage.token ? (
+          <>
+            <button onClick={() =>{ 
+              localStorage.removeItem("token")
+              navigate('/')}}>Cerrar Sesion</button>
+          </>
+        ) : (
+          <>
+            <button onClick={() => navigate('/signUp')}>Registrate</button>
+            <button onClick={() => navigate('/login')}>Accede</button>
+          </>
+        )}
       </div>
     </div>
   )

@@ -11,6 +11,7 @@ const User = connection.define(
     // Definimos una columna 'name' para almacenar el nombre del usuario
     name: {
       type: DataTypes.STRING, // Establece el tipo de dato como cadena de texto
+      allowNull: false
     },
     password: {
       type: DataTypes.STRING, // Establece el tipo de dato como cadena de texto
