@@ -1,8 +1,8 @@
-import './ClientProfile.css'
+import './DataClientProfile.css'
 import { getClientInformation } from '../../services/clientInformation'
 import { useEffect, useState } from 'react'
 
-const ClientProfile = () => {
+const DataClientProfile = () => {
   const [dataClient, setDataClient] = useState({})
 
   useEffect(() => {
@@ -41,8 +41,9 @@ const ClientProfile = () => {
           <h2 className='no-validada'>Cuenta NO VALIDADA</h2>
         </>
       )}
+
     </>
   )
 }
 
-export default ClientProfile
+export default DataClientProfile

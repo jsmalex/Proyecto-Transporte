@@ -1,14 +1,11 @@
-import { useEffect } from "react"
-import "./HomeClient.css"
-
-import ClientProfile from "../../components/ClientProfile/ClientProfile"
+import MenuOptionsClient from '../../components/MenuOptionsClient/MenuOptionsClient'
+import './HomeClient.css'
 
 const HomeClient = () => {
   return (
-    <>
-        <ClientProfile/>
-      
-    </>
+    <div>
+      <MenuOptionsClient />
+    </div>
   )
 }
 

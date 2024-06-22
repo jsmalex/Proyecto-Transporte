@@ -1,6 +1,11 @@
 const e = require("express");
 const User = require("../models/user.model.js");
 
+// Importamos las librerías para manejar tokens y cifrado de contraseñas
+const jwt = require("jsonwebtoken");
+const bcrypt = require("bcrypt");
+const env = require("dotenv").config();
+
 const getAllUsers = async (request, response) => {
   try {
     const users = await User.findAll();
@@ -51,13 +56,19 @@ const createUser = async (req, res) => {
 const updateUser = async (req, res) => {
   try {
     const user = await User.findByPk(req.params.id);
+    const salt = bcrypt.genSaltSync(parseInt("10"));
+    // Ciframos la contraseña que viene en el cuerpo de la solicitud (req.body.password) usando la 'sal' generada
+    req.body.password = bcrypt.hashSync(req.body.password, salt);
+    // Creamos el payload del token, incluyendo el CIF del usuario
+    const payload = { CIF: req.body.CIF };
+    // Firmamos el token con una clave secreta y establecemos un tiempo de expiración
+    const token = jwt.sign(payload, env.parsed.SECRET, { expiresIn: "1h" });
     const updatedUser = await user.update(req.body);
     user.save();
-    console.log(updateUser);
     if (updatedUser) {
       return res
         .status(200)
-        .json({ message: "User updated", User: updatedUser });
+        .json({ message: "User updated", User: updatedUser,  token  });
     } else {
       return res.status(404).send("User not found");
     }
@@ -65,6 +76,7 @@ const updateUser = async (req, res) => {
     return res.status(500).send(error.message);
   }
 };
+
 
 const deleteUser = async (req, res) => {
   try {
