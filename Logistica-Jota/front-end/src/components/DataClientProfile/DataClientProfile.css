@@ -9,3 +9,11 @@
 span{
     font-weight: 900;
 }
+
+#client-profile a{
+    cursor: pointer;
+    color: black;
+    &:hover{
+        color:blue
+    }
+}

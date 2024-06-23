@@ -25,7 +25,8 @@ const getOneReference = async (req, res) => {
 const createReference = async (req, res) => {
   try {
     const reference = await Reference.create({
-      code_ref: req.body.code_ref,
+      reference_code: req.body.reference_code,
+      factory_id: req.body.factory_id,
       order_id: req.body.order_id,
     });
     return res

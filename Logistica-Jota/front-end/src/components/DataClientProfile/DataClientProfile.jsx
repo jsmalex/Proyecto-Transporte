@@ -1,10 +1,11 @@
 import './DataClientProfile.css'
 import { getClientInformation } from '../../services/clientInformation'
 import { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const DataClientProfile = () => {
   const [dataClient, setDataClient] = useState({})
-
+  const navigate = useNavigate();
   useEffect(() => {
     handleGetClientInformation()
   }, [])
@@ -15,7 +16,7 @@ const DataClientProfile = () => {
   }
 
   return (
-    <>
+    <div id="client-profile">
       <h1>Mi perfil</h1>
       <p><span>Nombre: </span>{dataClient.name}</p>
       <p><span>CIF: </span>{dataClient.CIF}</p>
@@ -42,7 +43,9 @@ const DataClientProfile = () => {
         </>
       )}
 
-    </>
+      <a onClick={()=>navigate("/HomeClient")}>...volver</a>
+
+    </div>
   )
 }
 

@@ -8,9 +8,6 @@ const { connection } = require("../../database/index");
 const Factory = connection.define(
   "factory",
   {
-    reference_id: {
-      type: DataTypes.INTEGER,
-    },
     name: {
       type: DataTypes.STRING,
     },

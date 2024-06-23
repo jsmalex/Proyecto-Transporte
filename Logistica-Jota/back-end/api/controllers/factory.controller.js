@@ -25,7 +25,6 @@ const getOneFactory = async (req, res) => {
 const createFactory = async (req, res) => {
   try {
     const factory = await Factory.create({
-      reference_id: req.body.reference_id,
       name: req.body.name,
       CIF: req.body.CIF,
       address: req.body.address,

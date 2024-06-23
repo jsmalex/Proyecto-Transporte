@@ -1,0 +1,7 @@
+#register-ok a{
+    cursor: pointer;
+    color: black;
+    &:hover{
+        color:blue
+    }
+}

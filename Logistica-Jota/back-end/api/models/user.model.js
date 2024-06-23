@@ -71,21 +71,3 @@ const User = connection.define(
 
 // Exportamos el modelo 'usuario' para poder usarlo en otras partes de la aplicación
 module.exports = User;
-/*
-  {
-    "name": "lolo",
-    "password": "me cago en tu puta madre, hijo de puta",
-    "CIF": "AAAA3333",
-    "role": "client",
-    "address": "sucasa",
-    "CP": "35620",
-    "city": "lasity",
-    "province": "LP",
-    "collection_price": 40,
-    "until_12T_price": 45,
-    "collection_12T_15T_price": 50,
-    "over15T_price": 60,
-    "Valencia_3T_price": 70,
-    "validated_client": false
-  }
-*/

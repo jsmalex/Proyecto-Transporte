@@ -14,7 +14,7 @@ const ConfirmDelete = () => {
           localStorage.removeItem("token")//destruyo el token si cierro sesion para que ocurra el cambio de botones
           navigate('/')
         }}>Aceptar</button>
-        <button>Cancelar</button>
+        <button onClick={()=>navigate("/HomeClient")}>Cancelar</button>
       </div>
     </div>
   )

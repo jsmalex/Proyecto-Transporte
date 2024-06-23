@@ -25,7 +25,7 @@ const getOnePhone = async (req, res) => {
 const createPhone = async (req, res) => {
   try {
     const phone = await Phone.create({
-      client_id: req.body.client_id,
+      user_id: req.body.user_id,
       phone: req.body.phone,
     });
     return res

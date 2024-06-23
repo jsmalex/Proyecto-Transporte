@@ -1,10 +1,11 @@
 import "./RegisterOK.css"
-import { useLocation } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import toast, { Toaster } from 'react-hot-toast'
 import { useEffect } from 'react'
 
 
 const RegisterOK = () => {
+    const navigate = useNavigate()
     const location = useLocation()
     useEffect(() => {
       if (location?.state?.registered) {
@@ -12,7 +13,7 @@ const RegisterOK = () => {
       }
     })
   return (
-    <>
+    <div id="register-ok">
       <Toaster />
       <h1>Usuario registrado correctamente</h1>
       <p>
@@ -20,8 +21,8 @@ const RegisterOK = () => {
         de su cuenta y nos pondremos en contacto con usted a la mayor brevedad
         posible.
       </p>
-      <a href="/HomeClient">Ir a mi página de inicio</a>
-    </>
+      <a onClick={() => navigate("/HomeClient")}>Ir a mi página de inicio</a>
+    </div>
   )
 }
 

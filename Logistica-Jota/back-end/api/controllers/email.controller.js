@@ -25,7 +25,7 @@ const getOneEmail = async (req, res) => {
 const createEmail = async (req, res) => {
   try {
     const email = await Email.create({
-      client_id: req.body.client_id,
+      user_id: req.body.user_id,
       email: req.body.email
     });
     return res

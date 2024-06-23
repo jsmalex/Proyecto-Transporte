@@ -33,16 +33,15 @@ const FormUpdateDataClient = () => {
         city: city,
         province: province,
       }
-      const result = await updateDataClient(data)
-      console.log(result)
+      await updateDataClient(data)
       navigator("/UpdateOK")
     } catch (error) {
       toast.error('Rellene todos los campos adecuadamente, por favor')
     }
   }
-
+  const navigate = useNavigate()
   return (
-    <>
+    <div id="form-update">
       <Toaster />
 
       <h2>Actualizar cuenta de usuario</h2>
@@ -123,7 +122,9 @@ const FormUpdateDataClient = () => {
           Actualizar
         </button>
       </form>
-    </>
+
+      <a onClick={()=>navigate('/HomeClient')}>...volver</a>
+    </div>
   )
 }
 

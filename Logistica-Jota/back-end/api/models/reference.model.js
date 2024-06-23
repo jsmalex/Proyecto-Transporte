@@ -4,7 +4,7 @@ const { connection } = require("../../database/index");
 const Reference = connection.define(
   "reference",
   {
-    code_ref: {
+    reference_code: {
       type: DataTypes.STRING,
       unique: true,
     },

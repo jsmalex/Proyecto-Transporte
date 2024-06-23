@@ -25,7 +25,7 @@ const getOneOrder = async (req, res) => {
 const createOrder = async (req, res) => {
   try {
     const order = await Order.create({
-      client_id: req.body.client_id,
+      user_id: req.body.user_id,
       date_order: req.body.date_order,
       date_load: req.body.date_load,
       total_estimated_load: req.body.total_estimated_load,

@@ -7,7 +7,7 @@ const MenuOptionsClient = () => {
   return (
     <div id="client-option">
         <ul>
-            <a href="/ClientProfile"><li>Mi Perfil</li></a>
+            <a onClick={() => navigate("/ClientProfile")}><li>Mi Perfil</li></a>
             <a onClick={() => navigate("/UpdateDataClient")}><li>Actualizar mis datos de registro</li></a>
             <a onClick={() => navigate("/DeleteOK")}><li>Darme de baja</li></a>
         </ul>

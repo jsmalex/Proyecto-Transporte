@@ -1,6 +1,6 @@
 #client-option a{
     cursor: pointer;
-    color: purple;
+    color: black;
     &:hover{
         color:blue
     }
