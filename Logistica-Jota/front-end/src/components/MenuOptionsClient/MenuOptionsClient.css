@@ -1,0 +1,7 @@
+#client-option a{
+    cursor: pointer;
+    color: purple;
+    &:hover{
+        color:blue
+    }
+}

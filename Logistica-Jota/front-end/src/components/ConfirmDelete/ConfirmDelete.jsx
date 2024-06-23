@@ -9,9 +9,9 @@ const ConfirmDelete = () => {
     <div>
       <p>¿Seguro que desea darse de baja en nuestra web?</p>
       <div>
-        <button onClick={()=>{
+        <button onClick={async ()=>{
+          await deleteClient()
           localStorage.removeItem("token")//destruyo el token si cierro sesion para que ocurra el cambio de botones
-          deleteClient()
           navigate('/')
         }}>Aceptar</button>
         <button>Cancelar</button>
