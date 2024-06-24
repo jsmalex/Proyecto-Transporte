@@ -12,6 +12,9 @@ import ClientProfile from '../components/DataClientProfile/DataClientProfile'
 import UpdateDataClient from '../pages/UpdateDataClient/UpdateDataClient'
 import DeleteOK from '../pages/DeleteOK/DeleteOK'
 import UpdateOK from '../pages/UpdateOK/UpdateOK'
+import HomeAdmin from '../pages/HomeAdmin/HomeAdmin'
+import AddFactory from '../pages/AddFactory/AddFactory'
+import CreateFactoryOK from '../pages/CreateFactoryOK/CreateFactoryOK'
 
 
 const router = createBrowserRouter([
@@ -66,6 +69,18 @@ const router = createBrowserRouter([
       {
         path: '/UpdateOK',
         element: <UpdateOK />,
+      },
+      {
+        path: '/HomeAdmin',
+        element: <HomeAdmin />,
+      },
+      {
+        path: '/AddFactory',
+        element: <AddFactory />,
+      },
+      {
+        path: '/CreateFactoryOK',
+        element: <CreateFactoryOK />,
       },
     ],
   },

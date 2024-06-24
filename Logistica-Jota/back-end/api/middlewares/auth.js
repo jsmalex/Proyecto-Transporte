@@ -13,7 +13,6 @@ function checkAuth(req, res, next) {
     req.headers.authorization, // El token extraído del encabezado de autorización
     process.env.SECRET, // La clave secreta para desencriptar el token, almacenada en variables de entorno
     async (error, payload) => {
-      console.log(process.env.SECRET);
       // Callback que maneja el resultado de la verificación
       // Si hay un error en la verificación, como un token expirado o modificado
       if (error) {

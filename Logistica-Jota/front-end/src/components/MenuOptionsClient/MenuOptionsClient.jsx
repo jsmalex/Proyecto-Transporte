@@ -5,7 +5,7 @@ import "./MenuOptionsClient.css"
 const MenuOptionsClient = () => {
   const navigate = useNavigate()
   return (
-    <div id="client-option">
+    <div id="menu-option-client">
         <ul>
             <a onClick={() => navigate("/ClientProfile")}><li>Mi Perfil</li></a>
             <a onClick={() => navigate("/UpdateDataClient")}><li>Actualizar mis datos de registro</li></a>

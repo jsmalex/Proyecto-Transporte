@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import "./FormLogin.css"
 import toast, { Toaster } from 'react-hot-toast'
 import { login } from '../../services/auth'
+import { getClientInformation } from '../../services/clientInformation'
 
 const FormSignup = () => {
   const [CIF, setCIF] = useState()
@@ -15,7 +16,9 @@ const FormSignup = () => {
       let data = { CIF: CIF, password: password }
       const result = await login(data)
       localStorage.setItem('token', result.token)
-      navigate("/HomeClient") 
+      const {role} = await getClientInformation();
+      (role==="client"? navigate("/HomeClient") : navigate("/HomeAdmin"))
+       
     }catch(error) {
       toast.error('Credenciales inválidas')
     }

@@ -1,4 +1,4 @@
-#menu-option-client a{
+#menu-option-admin a{
     cursor: pointer;
     color: black;
     &:hover{
