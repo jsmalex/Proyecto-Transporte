@@ -13,7 +13,6 @@ const FormAddFactory = () => {
   const [phone, setPhone]=useState("");
   const navigate = useNavigate();
   const handleFormAddFactory = async () =>{
-    console.log("maria un pajote");
     if (
       name.length === 0 ||
       CIF.length === 0 ||
@@ -21,7 +20,6 @@ const FormAddFactory = () => {
       email.length === 0 ||
       phone.length === 0
     ) {
-      console.log("pepe");
       return toast.error('Introduce todos los campos del formulario')
     }
 
@@ -69,9 +67,9 @@ const FormAddFactory = () => {
 
           <div>
             <label>Telefono:</label>
-            <input onChange={(e)=>setPhone(e.target.value)} type="text"/>
+            <input onChange={(e)=>setPhone(e.target.value)} type="tel"/>
           </div>
-
+          
           <button onClick={(e) => {
             e.preventDefault()
             handleFormAddFactory()}}>Añadir</button>
