@@ -2,36 +2,74 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: bisque;
-    padding: 10px;
+    background-color:#FEB941;
+    padding: 4px;
 }
 
 img{
     width: 100px;
     height: 100px;
-    border-radius: 5px;
+    margin-top: 6px;
+    margin-left: 6px;
+    border-radius: 8px;
 }
 
 nav{
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    width: 300px;
-
+    width: 45%;
+    background-image:
+    
 }
 
 a{
-    text-decoration: none;
-}
-
+   /*text-decoration: none;*/
+   
+   }
+   
+.tab{
+    
+    transition: transform 0.3s ease-in-out;
+    border: none;
+    background-color:#373A40;
+    padding: 8px 28px;
+    cursor: pointer;
+    border-radius: 4px;
+    display: inline-block;
+    margin: 5px;
+    font:menu;
+    width: 500px;
+    
+   }
 
 button{
-    margin: 3px;
+    transition: transform 0.3s ease-in-out;
+    border: none; 
+    color: black; 
+    background-color:#97BE5A;
+    padding: 8px 28px; 
+    cursor: pointer; 
+    border-radius: 4px; 
+    display: inline-block;
+    margin: 5px;
+    font: menu
 }
+.pulse-effect:hover {
+  background-color: white; /* Cambia el color al pasar el cursor sobre el botón */
+}
+.pulse-effect:active {
+  transform: scale(0.9); /* Reduce ligeramente el tamaño del botón cuando se hace clic */
+}
+    
+
 
 #header a{
     cursor: pointer;
     color: black;
     &:hover{
-        color:blue
+        color:#2C7865;
     }
+    font-weight: bold;
+
 }
