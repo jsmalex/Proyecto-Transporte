@@ -28,6 +28,7 @@ const Home = () => {
           España.
         </p>
       </div>
+        <img className="overfoot" src="src/assets/img/threetruck.jpg"></img>
     </div>
   )
 }

@@ -1,0 +1,48 @@
+.img {
+    width: 1000vw;
+    height: 1000vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+
+
+}
+
+h2 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+    margin-left: 270px;
+    margin-bottom: 50px;
+
+}
+
+.button {
+    transition: transform 0.3s ease-in-out;
+    border: none; 
+    color: black; 
+    background-color:#97BE5A;
+    padding: 8px 28px; 
+    cursor: pointer; 
+    border-radius: 4px; 
+    display: inline-block;
+    margin: 5px;
+    font: menu
+}
+.pulse-effect:hover {
+  background-color: white; /* Cambia el color al pasar el cursor sobre el botón */
+}
+.pulse-effect:active {
+  transform: scale(0.9); /* Reduce ligeramente el tamaño del botón cuando se hace clic */
+}
+   
+
+#formMain {
+    width: 700px;
+    height: 700px;
+    background-image: url("src/assets/img/Plantilla formulario.png");
+    border-radius: 10px;
+    display:flex;
+    align-items: center;
+    margin-left: 250px;
+
+}

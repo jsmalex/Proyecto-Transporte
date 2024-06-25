@@ -1,17 +1,46 @@
-import { useNavigate } from "react-router-dom"
-import "./MenuOptionsClient.css"
-
+import { useNavigate } from 'react-router-dom'
+import './MenuOptionsClient.css'
 
 const MenuOptionsClient = () => {
   const navigate = useNavigate()
   return (
     <div id="menu-option-client">
-        <ul>
-            <a onClick={() => navigate("/ClientProfile")}><li>Mi Perfil</li></a>
-            <a onClick={() => navigate("/UpdateDataClient")}><li>Actualizar mis datos de registro</li></a>
-            <a onClick={() => navigate("/MakeOrder")}><li>Realizar pedidos</li></a>
-            <a onClick={() => navigate("/DeleteOK")}><li>Darme de baja</li></a>
+      <main id="menu">
+        <ul style={{ listStyle: "none" }}>
+          <li style={{ margin: '20px',  }}>
+            <a
+              
+              className="tabmenu"
+              onClick={() => navigate('/ClientProfile')}
+            >
+              Mi Perfil
+            </a>
+          </li>
+
+          <li style={{ margin: '20px' }}>
+            <a
+              className="tabmenu"
+              onClick={() => navigate('/UpdateDataClient')}
+            >
+              Actualizar mis datos de registro{' '}
+            </a>
+          </li>
+
+          <li style={{ margin: '20px' }}>
+            {' '}
+            <a className="tabmenu" onClick={() => navigate('/MakeOrder')}>
+              Realizar pedidos
+            </a>
+          </li>
+
+          <li style={{ margin: '20px' }}>
+            {' '}
+            <a className="tabmenu" onClick={() => navigate('/DeleteOK')}>
+              Darme de baja
+            </a>
+          </li>
         </ul>
+      </main>
     </div>
   )
 }

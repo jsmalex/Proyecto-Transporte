@@ -1,4 +1,3 @@
-
 import "./ClientProfile.css"
 
 import DataClientProfile from "../../components/DataClientProfile/DataClientProfile"

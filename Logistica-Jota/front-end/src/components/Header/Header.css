@@ -40,6 +40,7 @@ a{
     margin: 5px;
     font:menu;
     width: 500px;
+    color: white;
     
    }
 
@@ -66,9 +67,9 @@ button{
 
 #header a{
     cursor: pointer;
-    color: black;
+    color: white;
     &:hover{
-        color:#2C7865;
+        color:#97BE5A;
     }
     font-weight: bold;
 

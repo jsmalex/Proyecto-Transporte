@@ -27,8 +27,9 @@ const FormSignup = () => {
   return (
     <>
       <Toaster />
+      <main id='formMain'>
       <form action="">
-        <h2>Iniciar sesion</h2>
+        <h2>Acceda a su cuenta</h2>
 
         <div>
           <label>CIF</label>
@@ -54,6 +55,7 @@ const FormSignup = () => {
         </div>
 
         <button
+          className="button pulse-effect"
           onClick={(e) => {
             e.preventDefault()
             handleLogin()
@@ -62,6 +64,7 @@ const FormSignup = () => {
           Iniciar sesión
         </button>
       </form>
+      </main>
     </>
   )
 }

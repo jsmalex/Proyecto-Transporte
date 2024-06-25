@@ -1,9 +1,10 @@
 .footer{
     background-color: #FEB941;
     margin-top: 60%;
-    position: relative;
+    position:relative;
     font-family: 'Courier New', Courier, monospace;
     font-size: small;
+    text-align: center;
   
   
 }

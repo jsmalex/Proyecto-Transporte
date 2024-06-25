@@ -2,6 +2,48 @@
     cursor: pointer;
     color: black;
     &:hover{
-        color:blue
+        color:#2C7865;
     }
+}
+
+
+
+.actualizaCuenta{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+display:flex;
+margin-left: 135px;
+}
+
+.button {
+    transition: transform 0.3s ease-in-out;
+    border: none; 
+    color: black; 
+    background-color:#97BE5A;
+    padding: 8px 28px; 
+    cursor: pointer; 
+    border-radius: 4px; 
+    display: inline-block;
+    margin: 5px;
+    font: menu;
+    font-weight: bold;
+    
+}
+
+.pulse-effect:hover {
+  background-color: white; /* Cambia el color al pasar el cursor sobre el botón */
+}
+.pulse-effect:active {
+  transform: scale(0.9); /* Reduce ligeramente el tamaño del botón cuando se hace clic */
+}
+   
+
+#formMain0 {
+    width: 700px;
+    height: 700px;
+    background-color:darkorange;
+    border-radius: 10px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 270px;
 }

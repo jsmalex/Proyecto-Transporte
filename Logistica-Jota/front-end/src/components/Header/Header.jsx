@@ -11,13 +11,22 @@ const Header = () => {
       </a>
 
       <nav>
-        <a className="tab" onClick={() => navigate('/services')}>
+        <a
+          className="tab"
+          onClick={() => navigate('/services')}
+        >
           Servicios
         </a>
-        <a className="tab" onClick={() => navigate('/aboutUs')}>
+        <a
+          className="tab"
+          onClick={() => navigate('/aboutUs')}
+        >
           Sobre Nosotros
         </a>
-        <a className="tab" onClick={() => navigate('/contact')}>
+        <a
+          className="tab"
+          onClick={() => navigate('/contact')}
+        >
           Contacto
         </a>
       </nav>

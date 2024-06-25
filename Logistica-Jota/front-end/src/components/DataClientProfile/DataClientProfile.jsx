@@ -18,6 +18,7 @@ const DataClientProfile = () => {
   return (
     <div id="client-profile">
       <h1>Mi perfil</h1>
+      <main id="mainMenu">
       <p><span>Nombre: </span>{dataClient.name}</p>
       <p><span>CIF: </span>{dataClient.CIF}</p>
       <p><span>Dirección: </span>{dataClient.address}</p>
@@ -29,7 +30,7 @@ const DataClientProfile = () => {
       <p><span>Tarifa de recogida entre 12 y 15 toneladas: </span>{dataClient.collection_12T_15T_price}</p>
       <p><span>Tarifa de recogida más de 15 toneladas: </span>{dataClient.over15T_price}</p>
       <p><span>Tarifa de recogida 3 toneladas a Valencia: </span>{dataClient.Valencia_3T_price}</p>
-      
+      </main>
       {dataClient.validated_client ? 
       (
         <>
@@ -43,8 +44,8 @@ const DataClientProfile = () => {
         </>
       )}
 
-      <a onClick={()=>navigate("/HomeClient")}>...volver</a>
-
+      <span><a style={{fontWeight:"bold"},{alignContent:"center"}} onClick={()=>navigate("/HomeClient")}>...Volver</a>
+</span>
     </div>
   )
 }
