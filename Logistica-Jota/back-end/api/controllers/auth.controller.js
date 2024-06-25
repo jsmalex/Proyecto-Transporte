@@ -37,7 +37,7 @@ const signUp = async (req, res) => {
     // Creamos el payload del token, incluyendo el CIF del usuario
     const payload = { CIF: req.body.CIF };
     // Firmamos el token con una clave secreta y establecemos un tiempo de expiración
-    const token = jwt.sign(payload, env.parsed.SECRET, { expiresIn: "1h" });
+    const token = jwt.sign(payload, env.parsed.SECRET);
 
     // Si todo es correcto, devolvemos el token al usuario con un estado 200 (OK)
     return res.status(200).json({ token }); // === { token: token }
@@ -71,7 +71,7 @@ const login = async (req, res) => {
       // Crea un payload con el email del usuario
       const payload = { CIF: req.body.CIF };
       // Firma un token JWT usando una clave secreta y establece un tiempo de expiración
-      const token = jwt.sign(payload, env.parsed.SECRET, { expiresIn: "1h" });
+      const token = jwt.sign(payload, env.parsed.SECRET);
       // Devuelve el token generado con un estado 200, indicando éxito en el inicio de sesión
       return res.status(200).json({ token }); // El objeto json contiene el token generado
     } else {
