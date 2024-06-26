@@ -1,4 +1,6 @@
 const Order = require("../models/order.model.js");
+const Factory = require("../models/factory.model")
+const Reference = require("../models/reference.model");
 
 const getAllOrders = async (request, response) => {
   try {
@@ -24,15 +26,29 @@ const getOneOrder = async (req, res) => {
 
 const createOrder = async (req, res) => {
   try {
+    //Aqui escribo en la tabla de order
     const order = await Order.create({
-      user_id: req.body.user_id,
-      date_order: req.body.date_order,
-      date_load: req.body.date_load,
-      total_estimated_load: req.body.total_estimated_load,
-      total_real_load: req.body.total_real_load,
-      documentation: req.body.documentation,
-      observations: req.body.observations,
+      userId: res.locals.user.id,
     });
+
+    //Aqui escribo en la tabla de Fabricas
+    req.body.map(async (miniOrder)=>{
+
+      const factoryOrder = await Factory.findByPk(miniOrder.Factory_id)
+      await order.addFactory(factoryOrder);
+
+      //Aqui escribo en la tabla de referencias
+      miniOrder.referencies.map(async (oneReference)=>{
+        const reference = await Reference.create({
+          reference_code : oneReference,
+          orderId : order.id,
+          factoryId : factoryOrder.id
+        })
+      })
+
+    })
+    
+    console.log(req.body);
     return res.status(200).json({ message: "Order created", Order: order });
   } catch (error) {
     res.status(500).send(error.message);

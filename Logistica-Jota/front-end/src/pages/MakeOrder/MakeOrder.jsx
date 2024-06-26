@@ -2,10 +2,14 @@ import { useContext, useState } from "react"
 import FormMakeOrder from "../../components/FormMakeOrder/FormMakeOrder"
 import "./MakeOrder.css"
 import { Context } from "../../context/context"
+import { useEffect } from "react"
+import { sendOrder } from "../../services/sendOrder"
 
 
 const MakeOrder = () => {
   const {
+    order,
+    buttonClick,
     setButtonClick,
   } = useContext(Context)
   const [numberFactories, setnumberFactories] = useState(0)
@@ -22,6 +26,17 @@ const MakeOrder = () => {
     } 
     return arrayForms
   }
+  const myOrder = async() =>{
+    if(buttonClick){
+      const sendMyOrder = await sendOrder(order)
+      console.log(sendMyOrder);
+      setButtonClick(false)
+    }
+  }
+  useEffect(() => {
+    myOrder();
+
+  }, [order])
   return (
     <div>
       <h2>Contrate su transporte</h2>

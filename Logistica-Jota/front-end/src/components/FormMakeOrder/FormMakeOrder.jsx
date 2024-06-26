@@ -3,9 +3,11 @@ import { getAllFactories } from "../../services/getAllFactories"
 import "./FormMakeOrder.css"
 import FormMakeReference from "../FormMakeReference/FormMakeReference";
 import { Context } from "../../context/context";
+import { sendOrder } from "../../services/sendOrder";
 const order = []
 const FormMakeOrder = () => {
 const {
+  setOrder,
   buttonClick,
   references,
 } = useContext(Context)
@@ -36,7 +38,7 @@ const {
     }
     return arrayForms
   }
-  const doOrder = () =>{
+  const doOrder = async() =>{
     if (buttonClick) {
       const referencestoFactory =references.splice(0,numberReferences)
       order.push({
@@ -44,7 +46,8 @@ const {
          referencies: referencestoFactory
       }
       )
-      console.log(order);
+      setOrder(order)
+      
     }
   }
   return (
