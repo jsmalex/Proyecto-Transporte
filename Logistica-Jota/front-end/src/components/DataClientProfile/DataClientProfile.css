@@ -1,14 +1,22 @@
 .validada {
+  position: relative;
   color: green;
   display: contents;
+  bottom: 10vh;
 }
 
 .no-validada {
+  position: relative;
   color: red;
   display: contents;
 }
 
+.estado{
+  position: relative;
+}
+
 span {
+  position: relative;
   font-weight: 900;
 }
 
@@ -19,10 +27,11 @@ span {
     color: #2c7865;
   }
 }
-.a {
+.volver {
+  position: relative;
   width: 60px;
   height: 10px;
-
+  bottom: 2.5vh;
   font-size: large;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   font-weight: bold;
@@ -31,11 +40,12 @@ span {
 
 #mainMenu {
   width: 100%;
-  height: 700px;
+  height: 755px;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   font-size: large;
   font-variant: small-caps;
   display: flexbox;
   background-color: #d5f0c1;
-  margin-top: 10px;
+  position: relative;
+  bottom: 2vh;
 }

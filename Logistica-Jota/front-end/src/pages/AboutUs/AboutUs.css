@@ -1,0 +1,27 @@
+.about-us-header{
+    position: relative;
+    right: 10%;
+    font-size: 40px;
+}
+
+.why-us{
+    width: 65%;
+    height: 45vh;
+}
+
+.about-us{
+    background-color:#D5F0C1;
+    height: 195vh;
+    position: relative;
+    top: 2vh;
+}
+
+.story, .vision, .team, .social-responsability{
+    width: 50%;
+}
+
+.mission, .values, .work-site{
+    position: relative;
+    width: 50%;
+    left: 50%;
+}

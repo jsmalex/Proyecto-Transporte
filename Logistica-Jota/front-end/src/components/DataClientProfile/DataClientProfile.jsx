@@ -63,21 +63,24 @@ const DataClientProfile = () => {
           <span>Tarifa de recogida 3 toneladas a Valencia: </span>
           {dataClient.Valencia_3T_price}
         </p>
+
+        <div className="estado">
+          {dataClient.validated_client ? (
+            <>
+              <h2 className="validada">Cuenta VALIDADA</h2>
+            </>
+          ) : (
+            <>
+              <h2 className="no-validada">Cuenta NO VALIDADA</h2>
+            </>
+          )}
+        </div>
+        <span>
+          <a className="volver" onClick={() => navigate('/HomeClient')}>
+            ...Volver
+          </a>
+        </span>
       </main>
-      <div>
-        {dataClient.validated_client ? (
-          <>
-            <h2 className="validada">Cuenta VALIDADA</h2>
-          </>
-        ) : (
-          <>
-            <h2 className="no-validada">Cuenta NO VALIDADA</h2>
-          </>
-        )}
-      </div>
-      <span>
-        <a onClick={() => navigate('/HomeClient')}>...Volver</a>
-      </span>
     </div>
   )
 }

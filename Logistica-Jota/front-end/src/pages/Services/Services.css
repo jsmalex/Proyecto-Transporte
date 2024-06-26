@@ -1,0 +1,15 @@
+.services{
+    position: relative;
+    background-color:#D5F0C1;
+    top: 3vh;
+}
+
+.header-services{
+    position: relative;
+    right: 10%;
+}
+
+.why-us{
+    width: 65%;
+    height: 45vh;
+}

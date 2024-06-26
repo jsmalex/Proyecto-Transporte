@@ -1,0 +1,38 @@
+.contact{
+    position: relative;
+    background-color:#D5F0C1;
+
+}
+
+.contact-header{
+    position: relative;
+    right: 11%;
+}
+
+.rrss{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    top: -5vh;
+}
+
+.rs:hover{
+    transform: scale(1.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.info-question{
+   position: relative; 
+   width: 85%;
+   left: 5%;
+}
+
+.rrss-caption{
+    position: relative;
+    width: 70%;
+    left: 20%;
+}
+
+strong{
+    margin-right: 3%;
+}

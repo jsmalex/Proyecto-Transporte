@@ -7,11 +7,13 @@
 
 .question-buttons{
   position: relative;
-  top: 5px;
+  top: 5vh;
 }
 
 .background-confirm-delete{
     background-color: #d5f0c1;
     height: 15vh;
     padding-top: 15px;
+    position: relative;
+    top: 0vh !important;
 }
