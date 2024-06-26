@@ -1,16 +1,26 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { getAllFactories } from "../../services/getAllFactories"
 import "./FormMakeOrder.css"
 import FormMakeReference from "../FormMakeReference/FormMakeReference";
-
+import { Context } from "../../context/context";
+const order = []
 const FormMakeOrder = () => {
-
+const {
+  buttonClick,
+  references,
+} = useContext(Context)
   const [dataFactories, setDataFactories] = useState([])
   const [numberReferences, setnumberReferences] = useState(0)
-
+  const [numberFabric,setnumberFabric] = useState()
   useEffect(() => {
     handleGetAllFactories()
   }, [])
+
+  useEffect(() => {
+    doOrder()
+  },[references])
+
+
 
   const handleGetAllFactories = async () => {
     const result = await getAllFactories()
@@ -26,7 +36,17 @@ const FormMakeOrder = () => {
     }
     return arrayForms
   }
-
+  const doOrder = () =>{
+    if (buttonClick) {
+      const referencestoFactory =references.splice(0,numberReferences)
+      order.push({
+         Factory_id: numberFabric,
+         referencies: referencestoFactory
+      }
+      )
+      console.log(order);
+    }
+  }
   return (
     <div>
       <form>
@@ -35,10 +55,10 @@ const FormMakeOrder = () => {
             <label>Seleccione una fabrica:</label>
             <select
               onChange={(e) => {
-                
+                setnumberFabric(e.target.value)
               }}
             >
-              <option selected="true" disabled>
+              <option selected="true" disabled >
                 Selecciona Fabrica
               </option>
               {dataFactories.map((factory) => (

@@ -1,9 +1,13 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
 import FormMakeOrder from "../../components/FormMakeOrder/FormMakeOrder"
 import "./MakeOrder.css"
+import { Context } from "../../context/context"
 
 
 const MakeOrder = () => {
+  const {
+    setButtonClick,
+  } = useContext(Context)
   const [numberFactories, setnumberFactories] = useState(0)
 
   const displayFormsFactory = () =>{
@@ -33,7 +37,8 @@ const MakeOrder = () => {
         />
         {displayFormsFactory()}
       </div>
-      <button onClick={()=>[]
+      <button onClick={()=>{setButtonClick(true);
+      }
       }>Hacer pedido</button>
     </div>
   )
