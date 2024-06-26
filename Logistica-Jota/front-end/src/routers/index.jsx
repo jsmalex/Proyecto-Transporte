@@ -16,6 +16,7 @@ import HomeAdmin from '../pages/HomeAdmin/HomeAdmin'
 import AddFactory from '../pages/AddFactory/AddFactory'
 import CreateFactoryOK from '../pages/CreateFactoryOK/CreateFactoryOK'
 import MakeOrder from '../pages/MakeOrder/MakeOrder'
+import OrderOK from '../pages/OrderOK/OrderOK'
 
 
 const router = createBrowserRouter([
@@ -86,6 +87,10 @@ const router = createBrowserRouter([
       {
         path: '/MakeOrder',
         element: <MakeOrder />,
+      },
+      {
+        path: '/OrderOK',
+        element: <OrderOK />,
       },
     ],
   },

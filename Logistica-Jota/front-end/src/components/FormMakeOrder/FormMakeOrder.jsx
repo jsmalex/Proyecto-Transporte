@@ -3,7 +3,6 @@ import { getAllFactories } from "../../services/getAllFactories"
 import "./FormMakeOrder.css"
 import FormMakeReference from "../FormMakeReference/FormMakeReference";
 import { Context } from "../../context/context";
-import { sendOrder } from "../../services/sendOrder";
 const order = []
 const FormMakeOrder = () => {
 const {

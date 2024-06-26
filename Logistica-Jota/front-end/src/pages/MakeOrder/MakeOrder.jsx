@@ -4,6 +4,7 @@ import "./MakeOrder.css"
 import { Context } from "../../context/context"
 import { useEffect } from "react"
 import { sendOrder } from "../../services/sendOrder"
+import { useNavigate } from "react-router-dom"
 
 
 const MakeOrder = () => {
@@ -13,6 +14,7 @@ const MakeOrder = () => {
     setButtonClick,
   } = useContext(Context)
   const [numberFactories, setnumberFactories] = useState(0)
+  const navigate = useNavigate()
 
   const displayFormsFactory = () =>{
     
@@ -28,8 +30,8 @@ const MakeOrder = () => {
   }
   const myOrder = async() =>{
     if(buttonClick){
-      const sendMyOrder = await sendOrder(order)
-      console.log(sendMyOrder);
+      await sendOrder(order)
+      navigate("/OrderOK")
       setButtonClick(false)
     }
   }
