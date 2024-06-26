@@ -1,8 +1,19 @@
+.form-add-factory{
+    background-color: #D5F0C1;
+    position: relative;
+    top: -5.5vh;
+    margin-bottom: -35px;
+}
+
 .add-factory {
+    position: relative;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     text-align: center;
-    margin-left: 270px;
+    margin-right: 300px;
+    margin-top: 55px;
     margin-bottom: 50px;
+    top: 4vh;
+    z-index: 2;
 }
 
 .new-factory-form {
@@ -12,21 +23,33 @@
     background-color: #FEB941;
     border-radius: 10px;
     display:flex;
+    flex-direction: column;
     align-items: center;
     margin-left: 250px;
+    bottom: 5vh;
 }
 
-.label-add-factory {
-    display:flex;
-    flex-direction: column;
-    text-align:start;
-    
-
+.factory{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    left: 25%;
 }
 
+.label-add-factory{
+    width: 30%;
+  display: flex;
+  justify-content: left;
+  text-align: start;
+  margin-top: 1.25%;
+}
 
-
-
+.input-add-factory{
+  display: flex;
+  justify-content: right;
+  text-align: start;
+}
 
 
 .button-add-factory {
@@ -40,7 +63,6 @@
     display: inline-block;
     margin: 10px;
     width: 20%;
-    left: 3%;
     font: menu;
     font-weight: bold;
     top: 7vh;

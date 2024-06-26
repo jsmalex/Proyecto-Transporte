@@ -39,33 +39,49 @@ const FormAddFactory = () => {
     }
   }
   return (
-    <div>
+    <div className="form-add-factory">
       <Toaster />
       <h2 className="add-factory">Añadir fabrica</h2>
       <form className="new-factory-form" action="">
         <div className="factory">
           <label className="label-add-factory">Nombre:</label>
-          <input onChange={(e) => setName(e.target.value)} type="text" />
+          <input
+            className="input-add-factory"
+            onChange={(e) => setName(e.target.value)}
+            type="text"
+          />
         </div>
 
-        <div>
+        <div className="factory">
           <label className="label-add-factory">CIF:</label>
           <input onChange={(e) => setCIF(e.target.value)} type="text" />
         </div>
 
-        <div>
+        <div className="factory">
           <label className="label-add-factory">Direccion:</label>
-          <input onChange={(e) => setAddress(e.target.value)} type="text" />
+          <input
+            className="input-add-factory"
+            onChange={(e) => setAddress(e.target.value)}
+            type="text"
+          />
         </div>
 
-        <div>
+        <div className="factory">
           <label className="label-add-factory">Email:</label>
-          <input onChange={(e) => setEmail(e.target.value)} type="email" />
+          <input
+            className="input-add-factory"
+            onChange={(e) => setEmail(e.target.value)}
+            type="email"
+          />
         </div>
 
-        <div>
+        <div className="factory">
           <label className="label-add-factory">Telefono:</label>
-          <input onChange={(e) => setPhone(e.target.value)} type="tel" />
+          <input
+            className="input-add-factory"
+            onChange={(e) => setPhone(e.target.value)}
+            type="tel"
+          />
         </div>
 
         <button
