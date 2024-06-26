@@ -3,7 +3,7 @@
   color: black;
   &:hover {
     color: #2c7865;
-  }
+  };
 }
 .h2UpdateDataClient {
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
@@ -14,13 +14,16 @@
 }
 
 .updateDataClientForm {
-    position: relative;
+  position: relative;
+  display: flex;
+  flex-direction: column;
   width: 70%;
   left: 10%;
+  bottom: 5vh;
 }
 
 .inUpdateDataClient {
-    position: relative;
+  position: relative;
   margin-left: 15%;
   bottom: 30px;
 }
@@ -46,9 +49,10 @@
   font-weight: bold;
 }
 
-.update{
-    position: relative;
-    right: 15%;
+.update {
+  position: relative;
+  top: 5vh;
+  right: 15%;
 }
 
 .pulse-effect:hover {
@@ -60,6 +64,10 @@
   ); /* Reduce ligeramente el tamaño del botón cuando se hace clic */
 }
 
+#form-update{
+  background-color: #D5F0C1;
+}
+
 #formMainUpdate {
   width: 700px;
   height: 500px;
@@ -69,9 +77,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 10px;
+  margin-bottom: 40px;
+  position: relative;
+  top: 2vh;
   margin-left: 275px;
-  bottom: 45vh;
 }
 
 .signupForm {

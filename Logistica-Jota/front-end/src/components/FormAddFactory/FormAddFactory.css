@@ -1,0 +1,49 @@
+.add-factory {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+    margin-left: 270px;
+    margin-bottom: 50px;
+}
+
+.new-factory-form {
+    position: relative;
+    width: 750px;
+    height: 400px;
+    background-color: #FEB941;
+    border-radius: 10px;
+    display:flex;
+    align-items: center;
+    margin-left: 250px;
+}
+
+.label-add-factory {
+    display:flex;
+    flex-direction: column;
+    text-align:start;
+    
+
+}
+
+
+
+
+
+
+.button-add-factory {
+    transition: transform 0.3s ease-in-out;
+    border: none; 
+    color: black; 
+    background-color:#97BE5A;
+    padding: 8px 28px; 
+    cursor: pointer; 
+    border-radius: 4px; 
+    display: inline-block;
+    margin: 10px;
+    width: 20%;
+    left: 3%;
+    font: menu;
+    font-weight: bold;
+    top: 7vh;
+}
+
+
