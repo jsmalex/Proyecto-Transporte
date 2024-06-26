@@ -50,12 +50,13 @@ const FormSignup = () => {
     <>
       <Toaster />
 
-      <main id="formMain">
-        <form action="">
-      <h2>Crea cuenta de usuario</h2>
-          <div>
-            <label>Nombre</label>
+      <main id="formMainFormSignUp">
+        <form className="signupForm" action="">
+          <h2 className="signupFormh2">Crear cuenta de usuario</h2>
+          <div className="divSignup">
+            <label className="labelSignup">Nombre</label>
             <input
+              className="inSignup"
               onChange={(e) => {
                 setName(e.target.value)
               }}
@@ -64,9 +65,10 @@ const FormSignup = () => {
             />
           </div>
 
-          <div>
-            <label htmlFor="">Contraseña</label>
+          <div className="divSignup">
+            <label className="labelSignup">Contraseña</label>
             <input
+              className="inSignup"
               type="password"
               onChange={(e) => {
                 setPassword(e.target.value)
@@ -76,9 +78,10 @@ const FormSignup = () => {
             />
           </div>
 
-          <div>
-            <label>CIF</label>
+          <div className="divSignup">
+            <label className="labelSignup">CIF</label>
             <input
+              className="inSignup"
               onChange={(e) => {
                 setCIF(e.target.value)
               }}
@@ -87,9 +90,10 @@ const FormSignup = () => {
             />
           </div>
 
-          <div>
-            <label>Dirección</label>
+          <div className="divSignup">
+            <label className="labelSignup">Dirección</label>
             <input
+              className="inSignup"
               onChange={(e) => {
                 setAddress(e.target.value)
               }}
@@ -98,9 +102,10 @@ const FormSignup = () => {
             />
           </div>
 
-          <div>
-            <label>Código Postal</label>
+          <div className="divSignup">
+            <label className="labelSignup">Código Postal</label>
             <input
+              className="inSignup"
               onChange={(e) => {
                 setCP(e.target.value)
               }}
@@ -109,9 +114,10 @@ const FormSignup = () => {
             />
           </div>
 
-          <div>
-            <label>Ciudad</label>
+          <div className="divSignup">
+            <label className="labelSignup">Ciudad</label>
             <input
+              className="inSignup"
               onChange={(e) => {
                 setCity(e.target.value)
               }}
@@ -120,9 +126,10 @@ const FormSignup = () => {
             />
           </div>
 
-          <div>
-            <label>Provincia</label>
+          <div className="divSignup">
+            <label className="labelSignup">Provincia</label>
             <input
+              className="inSignup"
               onChange={(e) => {
                 setProvince(e.target.value)
               }}
@@ -132,7 +139,7 @@ const FormSignup = () => {
           </div>
 
           <button
-            className="button pulse-effect"
+            className="button-signup pulse-effect"
             onClick={(e) => {
               e.preventDefault()
               handleSignUp()

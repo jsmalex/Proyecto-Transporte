@@ -16,12 +16,12 @@ const RegisterOK = () => {
     <div id="register-ok">
       <Toaster />
       <h1>Usuario registrado correctamente</h1>
-      <p>
+      <p className="p-registerok">
         Su solicitud se ha tramitado correctamente. Procederemos a la VALIDACIÓN
         de su cuenta y nos pondremos en contacto con usted a la mayor brevedad
         posible.
       </p>
-      <a onClick={() => navigate("/HomeClient")}>Ir a mi página de inicio</a>
+      <a className="tab ancle" onClick={() => navigate("/HomeClient")}>Ir a mi página de inicio</a>
     </div>
   )
 }

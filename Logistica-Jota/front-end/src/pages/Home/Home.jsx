@@ -6,11 +6,11 @@ const Home = () => {
   
   return (
     <div className="home">
-      <h1>Bienvenido a Logística Jota</h1>
+      <h1 className="homeh1">Bienvenido a Logística Jota</h1>
 
       <img className="trucks" src="/src/assets/img/trucks.png"></img>
       <div className="intro">
-        <h2>¡Bienvenido a Logística Jota!</h2>
+        <h2 className="homeh2">¡Bienvenido a Logística Jota!</h2>
         <p>
           Somos una empresa de transporte que ofrece todo tipo de servicios y
           soluciones logísticas para su negocio. Poseemos amplia experiencia en

@@ -1,49 +1,80 @@
-#form-update a{
-    cursor: pointer;
-    color: black;
-    &:hover{
-        color:#2C7865;
-    }
+#form-update a {
+  cursor: pointer;
+  color: black;
+  &:hover {
+    color: #2c7865;
+  }
+}
+.h2UpdateDataClient {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  display: flex;
+  justify-content: center;
+  margin-right: 40%;
+  width: 50%;
 }
 
+.updateDataClientForm {
+    position: relative;
+  width: 70%;
+  left: 10%;
+}
 
+.inUpdateDataClient {
+    position: relative;
+  margin-left: 15%;
+  bottom: 30px;
+}
 
-.actualizaCuenta{
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-display:flex;
-margin-left: 135px;
+.labelUpdate {
+  width: 30%;
+  display: flex;
+  justify-content: left;
+  text-align: start;
 }
 
 .button {
-    transition: transform 0.3s ease-in-out;
-    border: none; 
-    color: black; 
-    background-color:#97BE5A;
-    padding: 8px 28px; 
-    cursor: pointer; 
-    border-radius: 4px; 
-    display: inline-block;
-    margin: 5px;
-    font: menu;
-    font-weight: bold;
-    
+  transition: transform 0.3s ease-in-out;
+  border: none;
+  color: black;
+  background-color: #97be5a;
+  padding: 8px 28px;
+  cursor: pointer;
+  border-radius: 4px;
+  display: inline-block;
+  margin: 5px;
+  font: menu;
+  font-weight: bold;
+}
+
+.update{
+    position: relative;
+    right: 15%;
 }
 
 .pulse-effect:hover {
   background-color: white; /* Cambia el color al pasar el cursor sobre el botón */
 }
 .pulse-effect:active {
-  transform: scale(0.9); /* Reduce ligeramente el tamaño del botón cuando se hace clic */
+  transform: scale(
+    0.9
+  ); /* Reduce ligeramente el tamaño del botón cuando se hace clic */
 }
-   
 
-#formMain0 {
-    width: 700px;
-    height: 700px;
-    background-color:darkorange;
-    border-radius: 10px;
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-left: 270px;
+#formMainUpdate {
+  width: 700px;
+  height: 500px;
+  background-color: #feb941;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  margin-left: 275px;
+  bottom: 45vh;
+}
+
+.signupForm {
+  position: relative;
+  bottom: 2vh;
 }

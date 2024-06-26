@@ -5,37 +5,37 @@ const MenuOptionsClient = () => {
   const navigate = useNavigate()
   return (
     <div id="menu-option-client">
-      <main id="menu">
-        <ul style={{ listStyle: "none" }}>
-          <li style={{ margin: '20px',  }}>
+      <main id="menu-client">
+        <ul className='list-client' style={{ listStyle: 'none' }}>
+          <li>
             <a
-              
-              className="tabmenu"
+              className="tabmenu-client"
               onClick={() => navigate('/ClientProfile')}
             >
               Mi Perfil
             </a>
           </li>
 
-          <li style={{ margin: '20px' }}>
+          <li>
             <a
-              className="tabmenu"
+              className="tabmenu-client"
               onClick={() => navigate('/UpdateDataClient')}
             >
               Actualizar mis datos de registro{' '}
             </a>
           </li>
 
-          <li style={{ margin: '20px' }}>
-            {' '}
-            <a className="tabmenu" onClick={() => navigate('/MakeOrder')}>
+          <li>
+            <a
+              className="tabmenu-client"
+              onClick={() => navigate('/MakeOrder')}
+            >
               Realizar pedidos
             </a>
           </li>
 
-          <li style={{ margin: '20px' }}>
-            {' '}
-            <a className="tabmenu" onClick={() => navigate('/DeleteOK')}>
+          <li>
+            <a className="tabmenu-client" onClick={() => navigate('/DeleteOK')}>
               Darme de baja
             </a>
           </li>

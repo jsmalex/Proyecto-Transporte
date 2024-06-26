@@ -43,12 +43,13 @@ const FormUpdateDataClient = () => {
   return (
     <div id="form-update">
       <Toaster />
-      <main id="formMain0">
-        <h2 className='actualizaCuenta'>hadsfasdfasdfasdfasdfasdflahola</h2>
-        <form action="">
+      <main id="formMainUpdate">
+        <h2 className="h2UpdateDataClient">Actualice sus datos</h2>
+        <form className="updateDataClientForm" action="">
           <div>
-            <label>Nombre</label>
+            <label className="labelUpdate">Nombre</label>
             <input
+              className="inUpdateDataClient"
               onChange={(e) => {
                 setName(e.target.value)
               }}
@@ -58,8 +59,9 @@ const FormUpdateDataClient = () => {
           </div>
 
           <div>
-            <label htmlFor="">Contraseña</label>
+            <label className="labelUpdate">Contraseña</label>
             <input
+              className="inUpdateDataClient"
               type="password"
               onChange={(e) => {
                 setPassword(e.target.value)
@@ -70,8 +72,9 @@ const FormUpdateDataClient = () => {
           </div>
 
           <div>
-            <label>Direccion</label>
+            <label className="labelUpdate">Direccion</label>
             <input
+              className="inUpdateDataClient"
               onChange={(e) => {
                 setAddress(e.target.value)
               }}
@@ -81,8 +84,9 @@ const FormUpdateDataClient = () => {
           </div>
 
           <div>
-            <label>Codigo Postal</label>
+            <label className="labelUpdate">Codigo Postal</label>
             <input
+              className="inUpdateDataClient"
               onChange={(e) => {
                 setCP(e.target.value)
               }}
@@ -92,8 +96,11 @@ const FormUpdateDataClient = () => {
           </div>
 
           <div>
-            <label>Ciudad</label>
+            <label className="labelUpdate" >
+              Ciudad
+            </label>
             <input
+              className="inUpdateDataClient"
               onChange={(e) => {
                 setCity(e.target.value)
               }}
@@ -103,8 +110,9 @@ const FormUpdateDataClient = () => {
           </div>
 
           <div>
-            <label>Provincia</label>
+            <label className="labelUpdate">Provincia</label>
             <input
+              className="inUpdateDataClient"
               onChange={(e) => {
                 setProvince(e.target.value)
               }}
@@ -114,6 +122,7 @@ const FormUpdateDataClient = () => {
           </div>
 
           <button
+            className="button update pulse-effect"
             onClick={(e) => {
               e.preventDefault()
               handleUpdateDataClient()

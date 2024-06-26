@@ -5,10 +5,37 @@ const MenuOptionsAdmin = () => {
   const navigate = useNavigate()
   return (
     <div id="menu-option-admin">
-        <ul>
-          
-          <a onClick={()=>navigate("/AddFactory")}><li>Agregar fábrica</li></a>
-        </ul>
+      <ul className="list-admin" style={{ listStyle: 'none' }}>
+        <li>
+          <a className="tabmenu-admin" onClick={() => navigate('/AddFactory')}>
+            Agregar fábrica
+          </a>
+        </li>
+        <li>
+          <a
+            className="tabmenu-admin"
+            onClick={() => navigate('/AddFactory') /*ESTO VA A OTRO SITIO */}
+          >
+            Consultar pedidos
+          </a>
+        </li>
+        <li>
+          <a
+            className="tabmenu-admin"
+            onClick={() => navigate('/AddFactory') /*ESTO VA A OTRO SITIO */}
+          >
+            Consultar clientes
+          </a>
+        </li>
+        <li>
+          <a
+            className="tabmenu-admin"
+            onClick={() => navigate('/AddFactory') /*ESTO VA A OTRO SITIO */}
+          >
+            Validar clientes
+          </a>
+        </li>
+      </ul>
     </div>
   )
 }

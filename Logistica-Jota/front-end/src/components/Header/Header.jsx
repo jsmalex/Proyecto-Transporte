@@ -1,32 +1,23 @@
-import { getClientInformation } from "../../services/clientInformation";
-import "./Header.css"
+import { getClientInformation } from '../../services/clientInformation'
+import './Header.css'
 import { useNavigate } from 'react-router-dom'
 
 const Header = () => {
-    const navigate = useNavigate();
+  const navigate = useNavigate()
   return (
     <div id="header">
-      <a onClick={() => navigate('/')}>
-        <img src="/src/assets/img/logo.jpg" alt="Logo de la empresa" />
+      <a className="ancle-header-img" onClick={() => navigate('/')}>
+        <img src="/src/assets/img/logo.png" alt="Logo de la empresa" />
       </a>
 
       <nav>
-        <a
-          className="tab"
-          onClick={() => navigate('/services')}
-        >
+        <a className="tab" onClick={() => navigate('/services')}>
           Servicios
         </a>
-        <a
-          className="tab"
-          onClick={() => navigate('/aboutUs')}
-        >
+        <a className="tab" onClick={() => navigate('/aboutUs')}>
           Sobre Nosotros
         </a>
-        <a
-          className="tab"
-          onClick={() => navigate('/contact')}
-        >
+        <a className="tab" onClick={() => navigate('/contact')}>
           Contacto
         </a>
       </nav>
@@ -35,6 +26,7 @@ const Header = () => {
         {localStorage.token ? ( //Si estoy logueado (tengo el token) muestro un boton para cerrar sesion y un enlace par ir a mi pagina principal. Si no estoy logueado muestro los dos botones de registrarte e iniciar sesion.
           <>
             <a
+              id="mySite"
               onClick={async () => {
                 const { role } = await getClientInformation()
                 if (role === 'client') navigate('/HomeClient')
@@ -75,7 +67,3 @@ const Header = () => {
 }
 
 export default Header
-
-
-
-

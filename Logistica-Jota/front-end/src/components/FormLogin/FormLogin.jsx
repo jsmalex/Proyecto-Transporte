@@ -27,43 +27,45 @@ const FormSignup = () => {
   return (
     <>
       <Toaster />
-      <main id='formMain'>
-      <form action="">
-        <h2>Acceda a su cuenta</h2>
+      <main id="formMainFormLogin">
+        <form className="loginForm" action="loginForm">
+          <h2 className="loginHeader">Acceda a su cuenta</h2>
 
-        <div>
-          <label>CIF</label>
-          <input
-            onChange={(e) => {
-              setCIF(e.target.value)
+          <div className="CIF-data">
+            <label>CIF</label>
+            <input
+              className="CIF-input"
+              onChange={(e) => {
+                setCIF(e.target.value)
+              }}
+              required
+              placeholder="Introduce tu CIF"
+            />
+          </div>
+
+          <div className="password-data">
+            <label className='password-label'>Contraseña</label>
+            <input
+              className="password-input"
+              type="password"
+              onChange={(e) => {
+                setPassword(e.target.value)
+              }}
+              required
+              placeholder="Introduce tu contraseña"
+            />
+          </div>
+
+          <button
+            className="button-login pulse-effect"
+            onClick={(e) => {
+              e.preventDefault()
+              handleLogin()
             }}
-            required
-            placeholder="Introduce tu CIF"
-          />
-        </div>
-
-        <div>
-          <label htmlFor="">Contraseña</label>
-          <input
-            type="password"
-            onChange={(e) => {
-              setPassword(e.target.value)
-            }}
-            required
-            placeholder="Introduce tu contraseña"
-          />
-        </div>
-
-        <button
-          className="button pulse-effect"
-          onClick={(e) => {
-            e.preventDefault()
-            handleLogin()
-          }}
-        >
-          Iniciar sesión
-        </button>
-      </form>
+          >
+            Iniciar sesión
+          </button>
+        </form>
       </main>
     </>
   )

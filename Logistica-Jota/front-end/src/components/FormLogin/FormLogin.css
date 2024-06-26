@@ -1,23 +1,24 @@
-.img {
-    width: 1000vw;
-    height: 1000vh;
-    display: flex;
-    align-items: center;
-    position: relative;
-
-
-}
-
-h2 {
+.loginHeader {
+  position: relative;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    text-align: center;
-    margin-left: 270px;
-    margin-bottom: 50px;
-
+    right: 25%;
+    top: 8vh;
 }
 
-.button {
+.orange {
+    width: 100%;
+    height: 95%;
+    top: 15px;
+    display: flex;
+    justify-self: center;
+    position: absolute;
+    z-index: 1;
+    opacity: 0.6;
+}
+
+.button-login {
     transition: transform 0.3s ease-in-out;
+    position: relative;
     border: none; 
     color: black; 
     background-color:#97BE5A;
@@ -25,24 +26,63 @@ h2 {
     cursor: pointer; 
     border-radius: 4px; 
     display: inline-block;
-    margin: 5px;
-    font: menu
+    font: menu;
+    font-weight: bold;
+    margin-top: 5%;
 }
+
 .pulse-effect:hover {
-  background-color: white; /* Cambia el color al pasar el cursor sobre el botón */
+  transform: scale(1.08); /* Aumenta ligeramente el tamaño del botón cuando se hace clic */
 }
 .pulse-effect:active {
   transform: scale(0.9); /* Reduce ligeramente el tamaño del botón cuando se hace clic */
 }
-   
 
-#formMain {
+input{
+  margin-top: 2%;
+}
+
+.CIF-data{
+  margin-bottom: 10vh;
+}
+
+.CIF-input{
+  position: relative;
+  margin-left: 15%;
+}
+
+.password-data{
+  position: relative;
+  bottom: 10vh;
+}
+
+.password-input{
+  position: relative;
+  bottom: 10vh;
+}
+
+.password-label{
+  position: relative;
+  bottom: 10vh;
+  right: 2%;
+}
+
+#formMainFormLogin {
+  position: relative;
     width: 700px;
-    height: 700px;
-    background-image: url("src/assets/img/Plantilla formulario.png");
+    height: 300px;
+    background-color: #FEB941;
+    margin-top: 10px;
     border-radius: 10px;
     display:flex;
+    justify-content: center;
     align-items: center;
     margin-left: 250px;
+  bottom: 45vh;
+  z-index: 2;
+}
 
+.loginForm{
+  position: relative;
+  bottom: 2vh;
 }

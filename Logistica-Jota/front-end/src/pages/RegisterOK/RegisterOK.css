@@ -1,7 +1,25 @@
 #register-ok a{
     cursor: pointer;
-    color: black;
+    font-weight: 600;
+    font-size: 18px;
+    color: rgb(255, 255, 255);
     &:hover{
-        color:blue
+        color:#2C7865;
     }
+}
+
+.p-registerok {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.ancle{
+    background-color: #97BE5A;
+    width: 25%;
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+
+.ancle:hover{
+    transform: scale(1.1);
 }
