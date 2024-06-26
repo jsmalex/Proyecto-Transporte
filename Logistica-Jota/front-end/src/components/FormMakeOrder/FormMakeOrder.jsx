@@ -3,9 +3,7 @@ import { getAllFactories } from "../../services/getAllFactories"
 import "./FormMakeOrder.css"
 import FormMakeReference from "../FormMakeReference/FormMakeReference";
 
-const factoriesReferences = []
-const references = []
-const FormMakeOrder = ({ buttonClick, funtionStealFather }) => {
+const FormMakeOrder = () => {
 
   const [dataFactories, setDataFactories] = useState([])
   const [numberReferences, setnumberReferences] = useState(0)
@@ -23,17 +21,12 @@ const FormMakeOrder = ({ buttonClick, funtionStealFather }) => {
     const arrayForms = []
     for (let i = 0; i < numberReferences; i++) {
       arrayForms.push(
-        <FormMakeReference functionStealSon={stealSon} buttonClick={buttonClick} />
+        <FormMakeReference />
       )
     }
     return arrayForms
   }
-  const stealSon = (ref) => {
-    if(!references.includes(ref)) {
-      references.push(ref)
-    }
-  }
-  console.log(references)
+
   return (
     <div>
       <form>
@@ -42,11 +35,7 @@ const FormMakeOrder = ({ buttonClick, funtionStealFather }) => {
             <label>Seleccione una fabrica:</label>
             <select
               onChange={(e) => {
-                factoriesReferences.push({
-                  factoriId : e.target.value,
-                  references : references
-                })
-                console.log(factoriesReferences)
+                
               }}
             >
               <option selected="true" disabled>

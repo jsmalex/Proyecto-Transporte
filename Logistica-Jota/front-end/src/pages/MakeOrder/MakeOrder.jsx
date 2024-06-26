@@ -2,7 +2,7 @@ import { useState } from "react"
 import FormMakeOrder from "../../components/FormMakeOrder/FormMakeOrder"
 import "./MakeOrder.css"
 
-const pedido = []
+
 const MakeOrder = () => {
   const [numberFactories, setnumberFactories] = useState(0)
 
@@ -12,21 +12,11 @@ const MakeOrder = () => {
 
     for (let i=0; i< numberFactories; i++){
       arrayForms.push(
-        <FormMakeOrder
-          funtionStealFather={stealFather}
-          buttonClick={buttonIsClicked}
-        />
+        <FormMakeOrder/>
       )
      
     } 
     return arrayForms
-  }
-  const [buttonIsClicked, setButtonIsClicked] = useState(false); 
-  const stealFather = (factories) => {
-    if (!pedido.includes(factories)) {
-      pedido.push(factories)
-    }
-   
   }
   return (
     <div>
@@ -43,7 +33,7 @@ const MakeOrder = () => {
         />
         {displayFormsFactory()}
       </div>
-      <button onClick={()=>{setButtonIsClicked(true)}
+      <button onClick={()=>[]
       }>Hacer pedido</button>
     </div>
   )

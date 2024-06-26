@@ -1,12 +1,8 @@
 import { useState } from 'react';
 import './FormMakeReference.css'
 
-function FormMakeReference({ functionStealSon, buttonClick }) {
+function FormMakeReference() {
     const [reference, setReference] = useState("")
-
-    if (buttonClick){
-        functionStealSon(reference)
-    }
 
   return (
     <div>
