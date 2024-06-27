@@ -16,10 +16,11 @@ h2 {
     display: inline-block;
     margin: 10px;
     width: 40%;
-    left: 3%;
+    left: 30%;
     font: menu;
     font-weight: bold;
     top: 7vh;
+    position: relative;
 }
 
 .pulse-effect:hover {

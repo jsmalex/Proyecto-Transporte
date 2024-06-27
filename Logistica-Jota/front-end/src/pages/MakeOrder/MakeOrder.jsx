@@ -40,9 +40,9 @@ const MakeOrder = () => {
 
   }, [order])
   return (
-    <div>
-      <h2>Contrate su transporte</h2>
-      <div>
+    <div id="make-order">
+      <h2 className="header-make-order">Contrate su transporte</h2>
+      <div className="make-order-form">
         <label>¿A cuantas fabricas debemos de ir? </label>
         <input
           onChange={(e) => {
@@ -54,7 +54,7 @@ const MakeOrder = () => {
         />
         {displayFormsFactory()}
       </div>
-      <button onClick={()=>{setButtonClick(true);
+      <button className="make-order-button" onClick={()=>{setButtonClick(true);
       }
       }>Hacer pedido</button>
     </div>

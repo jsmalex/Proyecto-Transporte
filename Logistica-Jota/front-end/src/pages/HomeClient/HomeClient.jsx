@@ -3,7 +3,7 @@ import './HomeClient.css'
 
 const HomeClient = () => {
   return (
-    <div>
+    <div className='home-client'>
     <MenuOptionsClient />
     </div>
   )

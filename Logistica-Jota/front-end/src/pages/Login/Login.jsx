@@ -5,7 +5,7 @@ const Login = () => {
 
 
   return (
-    <>
+    <div className="login-body">
       <div className="background-login">
         <img
           className="orange"
@@ -21,7 +21,7 @@ const Login = () => {
       </div>
 
       <FormLogin />
-    </>
+    </div>
   )
 }
 

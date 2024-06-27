@@ -1,0 +1,19 @@
+#make-order{
+    height: 70vh;
+    overflow: scroll;
+    display: flex;
+    flex-direction: column;
+}
+
+.header-make-order{
+    right: 10%;
+    position: relative;
+}
+
+.make-order-form{
+    top : 0;
+}
+
+.make-order-button{
+    margin-top: 100px;
+}
