@@ -11,6 +11,21 @@ const getAllOrders = async (request, response) => {
   }
 };
 
+const getAllOrdersClient = async (request, response) => {
+  try {
+    const orders = await Order.findAll({
+      where:{
+        userId: response.locals.user.id
+      },
+      include: [Reference,Factory]
+
+    });
+    return response.status(200).json(orders);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 const getOneOrder = async (req, res) => {
   try {
     const order = await Order.findByPk(req.params.id);
@@ -95,4 +110,5 @@ module.exports = {
   createOrder,
   updateOrder,
   deleteOrder,
+  getAllOrdersClient,
 };

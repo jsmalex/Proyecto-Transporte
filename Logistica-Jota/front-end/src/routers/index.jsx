@@ -17,6 +17,7 @@ import AddFactory from '../pages/AddFactory/AddFactory'
 import CreateFactoryOK from '../pages/CreateFactoryOK/CreateFactoryOK'
 import MakeOrder from '../pages/MakeOrder/MakeOrder'
 import OrderOK from '../pages/OrderOK/OrderOK'
+import GetAllOrderOfClient from '../pages/GetAllOrderOfClient/GetAllOrderOfClient'
 
 
 const router = createBrowserRouter([
@@ -92,7 +93,11 @@ const router = createBrowserRouter([
         path: '/OrderOK',
         element: <OrderOK />,
       },
+      {
+        path: '/GetAllOrderOfClient',
+        element: <GetAllOrderOfClient />,
+      },
     ],
   },
 ])
-export default router
+export default router 
