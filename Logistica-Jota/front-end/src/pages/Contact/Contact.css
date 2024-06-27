@@ -79,8 +79,13 @@ strong {
   color: black;
 }
 
+.address {
+  position: relative;
+  right: 5%;
+}
+
 .tel {
-  margin-right: 170px;
+  margin-right: 25%;
   top: 3vh;
 }
 
@@ -127,9 +132,9 @@ strong {
   bottom: 16px;
 }
 
-.info-ul{
+.info-ul {
   position: relative;
-    top: 17px;
+  top: 17px;
 }
 
 .our-social-media {

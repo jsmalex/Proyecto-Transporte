@@ -17,7 +17,7 @@ const Contact = () => {
               <li className="list-item-ul-chahci">
                 <img className="icon" src="src/assets/img/phone.png" />
                 <strong className="adri-has-been-here tel">
-                  <p>Teléfono:</p>
+                  <p className='in-ul-chachi'>Teléfono:</p>
                 </strong>
                 <p className="info-ul">
                   <b>+34 123 456 789</b>
@@ -37,8 +37,8 @@ const Contact = () => {
                   className="icon"
                   src="src/assets/icons/ubicacionfactory.jpg"
                 />
-                <strong className="adri-has-been-here ">
-                  <p>Dirección:</p>
+                <strong className="adri-has-been-here">
+                  <p className="address">Dirección:</p>
                 </strong>
                 <p className="info-ul">
                   <b>Calle Principal 123, Ciudad, País</b>
