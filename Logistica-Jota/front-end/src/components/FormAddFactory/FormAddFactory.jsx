@@ -39,43 +39,61 @@ const FormAddFactory = () => {
     }
   }
   return (
-    
-    <div>
-        <Toaster/>
-        <h2>Añadir fabrica</h2>
-        <form action="">
+    <div className="form-add-factory">
+      <Toaster />
+      <h2 className="add-factory">Añadir fabrica</h2>
+      <form className="new-factory-form" action="">
+        <div className="factory">
+          <label className="label-add-factory">Nombre:</label>
+          <input
+            className="input-add-factory"
+            onChange={(e) => setName(e.target.value)}
+            type="text"
+          />
+        </div>
 
-          <div>
-            <label>Nombre:</label>
-            <input onChange={(e)=>setName(e.target.value)} type="text" />
-          </div>
+        <div className="factory">
+          <label className="label-add-factory">CIF:</label>
+          <input onChange={(e) => setCIF(e.target.value)} type="text" />
+        </div>
 
-          <div>
-            <label>CIF:</label>
-            <input onChange={(e)=>setCIF(e.target.value)} type="text" />
-          </div>
-          
-          <div>
-            <label>Direccion:</label>
-            <input onChange={(e)=>setAddress(e.target.value)} type="text" />
-          </div>
+        <div className="factory">
+          <label className="label-add-factory">Direccion:</label>
+          <input
+            className="input-add-factory"
+            onChange={(e) => setAddress(e.target.value)}
+            type="text"
+          />
+        </div>
 
-          <div>
-            <label>Email:</label>
-            <input onChange={(e)=>setEmail(e.target.value)} type="email"/>
-          </div>
+        <div className="factory">
+          <label className="label-add-factory">Email:</label>
+          <input
+            className="input-add-factory"
+            onChange={(e) => setEmail(e.target.value)}
+            type="email"
+          />
+        </div>
 
-          <div>
-            <label>Telefono:</label>
-            <input onChange={(e)=>setPhone(e.target.value)} type="tel"/>
-          </div>
-          
-          <button onClick={(e) => {
+        <div className="factory">
+          <label className="label-add-factory">Telefono:</label>
+          <input
+            className="input-add-factory"
+            onChange={(e) => setPhone(e.target.value)}
+            type="tel"
+          />
+        </div>
+
+        <button
+          className="button-add-factory pulse-effect"
+          onClick={(e) => {
             e.preventDefault()
-            handleFormAddFactory()}}>Añadir</button>
-
-        </form>
-        
+            handleFormAddFactory()
+          }}
+        >
+          Añadir
+        </button>
+      </form>
     </div>
   )
 }

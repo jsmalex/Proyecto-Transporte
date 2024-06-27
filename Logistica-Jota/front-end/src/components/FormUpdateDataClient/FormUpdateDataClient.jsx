@@ -43,87 +43,97 @@ const FormUpdateDataClient = () => {
   return (
     <div id="form-update">
       <Toaster />
+      <main id="formMainUpdate">
+        <h2 className="h2UpdateDataClient">Actualice sus datos</h2>
+        <form className="updateDataClientForm" action="">
+          <div>
+            <label className="labelUpdate">Nombre</label>
+            <input
+              className="inUpdateDataClient"
+              onChange={(e) => {
+                setName(e.target.value)
+              }}
+              required
+              placeholder="Actualice nombre de la empresa"
+            />
+          </div>
 
-      <h2>Actualizar cuenta de usuario</h2>
-      <form action="">
-        <div>
-          <label>Nombre</label>
-          <input
-            onChange={(e) => {
-              setName(e.target.value)
+          <div>
+            <label className="labelUpdate">Contraseña</label>
+            <input
+              className="inUpdateDataClient"
+              type="password"
+              onChange={(e) => {
+                setPassword(e.target.value)
+              }}
+              required
+              placeholder="Actualice tu contraseña"
+            />
+          </div>
+
+          <div>
+            <label className="labelUpdate">Direccion</label>
+            <input
+              className="inUpdateDataClient"
+              onChange={(e) => {
+                setAddress(e.target.value)
+              }}
+              required
+              placeholder="Actualice direccion"
+            />
+          </div>
+
+          <div>
+            <label className="labelUpdate">Codigo Postal</label>
+            <input
+              className="inUpdateDataClient"
+              onChange={(e) => {
+                setCP(e.target.value)
+              }}
+              required
+              placeholder="Actualice CP"
+            />
+          </div>
+
+          <div>
+            <label className="labelUpdate" >
+              Ciudad
+            </label>
+            <input
+              className="inUpdateDataClient"
+              onChange={(e) => {
+                setCity(e.target.value)
+              }}
+              required
+              placeholder="Actualice ciudad"
+            />
+          </div>
+
+          <div>
+            <label className="labelUpdate">Provincia</label>
+            <input
+              className="inUpdateDataClient"
+              onChange={(e) => {
+                setProvince(e.target.value)
+              }}
+              required
+              placeholder="Actualice provincia"
+            />
+          </div>
+
+          <button
+            className="button update pulse-effect"
+            onClick={(e) => {
+              e.preventDefault()
+              handleUpdateDataClient()
             }}
-            required
-            placeholder="Actualice nombre de la empresa"
-          />
-        </div>
+          >
+            Actualizar
+          </button>
+        </form>
+      </main>
 
-        <div>
-          <label htmlFor="">Contraseña</label>
-          <input
-            type="password"
-            onChange={(e) => {
-              setPassword(e.target.value)
-            }}
-            required
-            placeholder="Actualice tu contraseña"
-          />
-        </div>
-
-        <div>
-          <label>Direccion</label>
-          <input
-            onChange={(e) => {
-              setAddress(e.target.value)
-            }}
-            required
-            placeholder="Actualice direccion"
-          />
-        </div>
-
-        <div>
-          <label>Codigo Postal</label>
-          <input
-            onChange={(e) => {
-              setCP(e.target.value)
-            }}
-            required
-            placeholder="Actualice CP"
-          />
-        </div>
-
-        <div>
-          <label>Ciudad</label>
-          <input
-            onChange={(e) => {
-              setCity(e.target.value)
-            }}
-            required
-            placeholder="Actualice ciudad"
-          />
-        </div>
-
-        <div>
-          <label>Provincia</label>
-          <input
-            onChange={(e) => {
-              setProvince(e.target.value)
-            }}
-            required
-            placeholder="Actualice provincia"
-          />
-        </div>
-
-        <button
-          onClick={(e) => {
-            e.preventDefault()
-            handleUpdateDataClient()
-          }}
-        >
-          Actualizar
-        </button>
-      </form>
-
-      <a onClick={()=>navigate('/HomeClient')}>...volver</a>
+      <a onClick={() => navigate('/HomeClient')}>...volver</a>
     </div>
   )
 }

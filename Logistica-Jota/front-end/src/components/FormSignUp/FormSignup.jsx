@@ -50,95 +50,105 @@ const FormSignup = () => {
     <>
       <Toaster />
 
-      <h2>Crea cuenta de usuario</h2>
-      <form action="">
-        <div>
-          <label>Nombre</label>
-          <input
-            onChange={(e) => {
-              setName(e.target.value)
-            }}
-            required
-            placeholder="Introduce nombre de la empresa"
-          />
-        </div>
+      <main id="formMainFormSignUp">
+        <form className="signupForm" action="">
+          <h2 className="signupFormh2">Crear cuenta de usuario</h2>
+          <div className="divSignup">
+            <label className="labelSignup">Nombre</label>
+            <input
+              className="inSignup"
+              onChange={(e) => {
+                setName(e.target.value)
+              }}
+              required
+              placeholder="Introduce nombre de la empresa"
+            />
+          </div>
 
-        <div>
-          <label htmlFor="">Contraseña</label>
-          <input
-            type="password"
-            onChange={(e) => {
-              setPassword(e.target.value)
-            }}
-            required
-            placeholder="Introduce tu contraseña"
-          />
-        </div>
+          <div className="divSignup">
+            <label className="labelSignup">Contraseña</label>
+            <input
+              className="inSignup"
+              type="password"
+              onChange={(e) => {
+                setPassword(e.target.value)
+              }}
+              required
+              placeholder="Introduce tu contraseña"
+            />
+          </div>
 
-        <div>
-          <label>CIF</label>
-          <input
-            onChange={(e) => {
-              setCIF(e.target.value)
-            }}
-            required
-            placeholder="Introduce tu CIF"
-          />
-        </div>
+          <div className="divSignup">
+            <label className="labelSignup">CIF</label>
+            <input
+              className="inSignup"
+              onChange={(e) => {
+                setCIF(e.target.value)
+              }}
+              required
+              placeholder="Introduce tu CIF"
+            />
+          </div>
 
-        <div>
-          <label>Direccion</label>
-          <input
-            onChange={(e) => {
-              setAddress(e.target.value)
-            }}
-            required
-            placeholder="Introduce direccion"
-          />
-        </div>
+          <div className="divSignup">
+            <label className="labelSignup">Dirección</label>
+            <input
+              className="inSignup"
+              onChange={(e) => {
+                setAddress(e.target.value)
+              }}
+              required
+              placeholder="Introduce direccion"
+            />
+          </div>
 
-        <div>
-          <label>Codigo Postal</label>
-          <input
-            onChange={(e) => {
-              setCP(e.target.value)
-            }}
-            required
-            placeholder="Introduce CP"
-          />
-        </div>
+          <div className="divSignup">
+            <label className="labelSignup">Código Postal</label>
+            <input
+              className="inSignup"
+              onChange={(e) => {
+                setCP(e.target.value)
+              }}
+              required
+              placeholder="Introduce CP"
+            />
+          </div>
 
-        <div>
-          <label>Ciudad</label>
-          <input
-            onChange={(e) => {
-              setCity(e.target.value)
-            }}
-            required
-            placeholder="Introduce ciudad"
-          />
-        </div>
+          <div className="divSignup">
+            <label className="labelSignup">Ciudad</label>
+            <input
+              className="inSignup"
+              onChange={(e) => {
+                setCity(e.target.value)
+              }}
+              required
+              placeholder="Introduce ciudad"
+            />
+          </div>
 
-        <div>
-          <label>Provincia</label>
-          <input
-            onChange={(e) => {
-              setProvince(e.target.value)
-            }}
-            required
-            placeholder="Introduce provincia"
-          />
-        </div>
+          <div className="divSignup">
+            <label className="labelSignup">Provincia</label>
+            <input
+              className="inSignup"
+              onChange={(e) => {
+                setProvince(e.target.value)
+              }}
+              required
+              placeholder="Introduce provincia"
+            />
+          </div>
 
-        <button
-          onClick={(e) => {
-            e.preventDefault()
-            handleSignUp()
-          }}
-        >
-          Registrarse
-        </button>
-      </form>
+          <button
+            className="button-signup pulse-effect"
+            onClick={(e) => {
+              e.preventDefault()
+              handleSignUp()
+            }}
+          >
+            Registrarse
+          </button>
+        </form>
+      </main>
     </>
   )
 }

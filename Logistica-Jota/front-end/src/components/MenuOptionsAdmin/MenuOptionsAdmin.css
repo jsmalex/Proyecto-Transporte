@@ -2,6 +2,42 @@
     cursor: pointer;
     color: black;
     &:hover{
-        color:blue
+        color:#2C7865;
     }
+}
+
+.list-admin{
+    position: relative;
+    bottom: 30px;
+    display: flex;
+    width: 50%;
+    list-style-position: none;
+}
+
+.tabmenu-admin {
+    display: inline-block;
+    transition: transform 0.3s ease-in-out;
+    border: none; 
+    color: black; 
+    background-color:#97BE5A;
+    padding: 18px 28px; 
+    cursor: pointer; 
+    border-radius: 4px; 
+    width: 100%;
+}
+
+.tabmenu-admin:hover{
+    transform: scale(1.1);
+}
+
+#menu-option-admin{
+    width: 100%;
+    height: 550px;
+    position: relative;
+    top: 0vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color:#D5F0C1;
 }

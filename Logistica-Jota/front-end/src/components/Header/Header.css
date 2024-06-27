@@ -1,37 +1,95 @@
-#header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: bisque;
-    padding: 10px;
+#header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #feb941;
+  padding: 4px;
 }
 
-img{
-    width: 100px;
-    height: 100px;
-    border-radius: 5px;
+img {
+  width: 100px;
+  height: 100px;
+  margin-top: 6px;
+  margin-left: 6px;
+  border-radius: 8px;
 }
 
-nav{
-    display: flex;
-    justify-content: space-between;
-    width: 300px;
-
+nav {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 65%;
+  margin-left: 5%;
+  left: 35px;
 }
 
-a{
-    text-decoration: none;
+.tab {
+  transition: transform 0.3s ease-in-out;
+  border: none;
+  background-color: #75d64e;
+  padding: 8px 28px;
+  cursor: pointer;
+  border-radius: 10px solid #000000;
+  display: inline-block;
+  margin: 5px 85px 5px 5px;
+  font: menu;
+  font-size: 17.6px;
+  width: 50%;
+  color: rgb(255, 255, 255);
 }
 
-
-button{
-    margin: 3px;
+.button {
+  transition: transform 0.3s ease-in-out;
+  border: none;
+  color: black;
+  background-color: #97be5a;
+  padding: 8px 28px;
+  cursor: pointer;
+  border-radius: 4px;
+  display: inline-block;
+  margin: 5px;
+  position: relative;
+  bottom: 5vh;
+  font: menu;
 }
 
-#header a{
-    cursor: pointer;
-    color: black;
-    &:hover{
-        color:blue
-    }
+button:hover {
+  transform: scale(1.1);
+}
+.pulse-effect:hover {
+  background-color: #0099ff; /* Cambia el color al pasar el cursor sobre el botón */
+}
+.pulse-effect:active {
+  transform: scale(
+    0.9
+  ); /* Reduce ligeramente el tamaño del botón cuando se hace clic */
+}
+
+#mySite {
+  position: relative;
+  right: 10%;
+  color: #5b7433 !important;
+  font-weight: bold;
+  font-size: 20px;
+  bottom: 5vh;
+}
+
+#mySite:hover {
+  color: #50b67e !important;
+}
+
+#header a {
+  transition: transform 0.15s ease-in-out;
+  cursor: pointer;
+  color: white;
+  &:hover {
+    transform: scale(1.1);
+    color: #0c6627;
+  }
+  font-weight: bold;
+}
+
+.ancle-header-img:hover {
+  transform: scale(1.1);
 }

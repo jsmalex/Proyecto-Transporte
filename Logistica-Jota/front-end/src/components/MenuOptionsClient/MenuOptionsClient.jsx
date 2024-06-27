@@ -1,28 +1,54 @@
-import { useNavigate } from "react-router-dom"
-import "./MenuOptionsClient.css"
-
+import { useNavigate } from 'react-router-dom'
+import './MenuOptionsClient.css'
 
 const MenuOptionsClient = () => {
   const navigate = useNavigate()
   return (
     <div id="menu-option-client">
-      <ul>
-        <a onClick={() => navigate('/ClientProfile')}>
-          <li>Mi Perfil</li>
-        </a>
-        <a onClick={() => navigate('/UpdateDataClient')}>
-          <li>Actualizar mis datos de registro</li>
-        </a>
-        <a onClick={() => navigate('/MakeOrder')}>
-          <li>Realizar pedidos</li>
-        </a>
-        <a onClick={() => navigate('/DeleteOK')}>
-          <li>Darme de baja</li>
-        </a>
-        <a onClick={() => navigate('/GetAllOrderOfClient')}>
-          <li>Ver todos mis pedidos</li>
-        </a>
-      </ul>
+      <main id="menu-client">
+        <ul className="list-client" style={{ listStyle: 'none' }}>
+          <li>
+            <a
+              className="tabmenu-client"
+              onClick={() => navigate('/ClientProfile')}
+            >
+              Mi Perfil
+            </a>
+          </li>
+
+          <li>
+            <a
+              className="tabmenu-client"
+              onClick={() => navigate('/UpdateDataClient')}
+            >
+              Actualizar mis datos de registro{' '}
+            </a>
+          </li>
+
+          <li>
+            <a
+              className="tabmenu-client"
+              onClick={() => navigate('/MakeOrder')}
+            >
+              Realizar pedidos
+            </a>
+          </li>
+          <li>
+            <a
+              className="tabmenu-client"
+              onClick={() => navigate('/GetAllOrderOfClient')}
+            >
+              Ver todos mis pedidos
+            </a>
+          </li>
+
+          <li>
+            <a className="tabmenu-client" onClick={() => navigate('/DeleteOK')}>
+              Darme de baja
+            </a>
+          </li>
+        </ul>
+      </main>
     </div>
   )
 }

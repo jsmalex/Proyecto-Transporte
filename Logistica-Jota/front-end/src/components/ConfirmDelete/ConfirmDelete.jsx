@@ -6,9 +6,9 @@ const ConfirmDelete = () => {
   const navigate = useNavigate();
 
   return (
-    <div>
-      <p>¿Seguro que desea darse de baja en nuestra web?</p>
-      <div>
+    <div className="background-confirm-delete">
+      <p className="alert-delete">¿Seguro que desea darse de baja en nuestra web?</p>
+      <div className="question-buttons">
         <button onClick={async ()=>{
           await deleteClient()
           localStorage.removeItem("token")//destruyo el token si cierro sesion para que ocurra el cambio de botones

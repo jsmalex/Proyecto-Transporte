@@ -4,7 +4,7 @@ import './HomeClient.css'
 const HomeClient = () => {
   return (
     <div>
-      <MenuOptionsClient />
+    <MenuOptionsClient />
     </div>
   )
 }

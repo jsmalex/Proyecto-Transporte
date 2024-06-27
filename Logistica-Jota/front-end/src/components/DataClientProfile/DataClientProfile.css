@@ -1,19 +1,51 @@
-.validada{
-    color : green
+.validada {
+  position: relative;
+  color: green;
+  display: contents;
+  bottom: 10vh;
 }
 
-.no-validada{
-    color : red
+.no-validada {
+  position: relative;
+  color: red;
+  display: contents;
 }
 
-span{
-    font-weight: 900;
+.estado{
+  position: relative;
 }
 
-#client-profile a{
-    cursor: pointer;
-    color: black;
-    &:hover{
-        color:blue
-    }
+span {
+  position: relative;
+  font-weight: 900;
+}
+
+#client-profile a {
+  cursor: pointer;
+  color: black;
+  &:hover {
+    color: #2c7865;
+  }
+}
+.volver {
+  position: relative;
+  width: 60px;
+  height: 10px;
+  bottom: 2.5vh;
+  font-size: large;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-weight: bold;
+  background-color: lightslategrey;
+}
+
+#mainMenu {
+  width: 100%;
+  height: 755px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: large;
+  font-variant: small-caps;
+  display: flexbox;
+  background-color: #d5f0c1;
+  position: relative;
+  bottom: 2vh;
 }
