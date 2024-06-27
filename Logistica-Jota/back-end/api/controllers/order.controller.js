@@ -1,11 +1,12 @@
 const Order = require("../models/order.model.js");
 const Factory = require("../models/factory.model")
 const Reference = require("../models/reference.model");
+const User = require("../models/user.model.js");
 
 const getAllOrders = async (request, response) => {
   try {
     const orders = await Order.findAll({
-      include: [Reference,Factory]
+      include: [Reference,Factory,User]
     });
     return response.status(200).json(orders);
   } catch (error) {

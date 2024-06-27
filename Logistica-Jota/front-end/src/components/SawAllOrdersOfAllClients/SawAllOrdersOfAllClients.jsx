@@ -7,6 +7,7 @@ const SawAllOrdersOfAllClients = () => {
   const [orders, setOrders] = useState([])
   const sawAllOrders = async () => {
     const data = await getAllOrdersOfAllClients()
+
     const formattedOrders = data.map((order) => {
       const factories = order.factories.map((factory) => {
         const references = order.references.filter(
@@ -18,7 +19,6 @@ const SawAllOrdersOfAllClients = () => {
       return { ...order, factories }
     })
     setOrders(formattedOrders)
-    console.log(formattedOrders)
   }
   useEffect(() => {
     sawAllOrders()
@@ -30,7 +30,8 @@ const SawAllOrdersOfAllClients = () => {
         return (
           <div className="order" key={index}>
             <h3>Pedido numero : {order.id}</h3>
-            <p>Cliente {order.userId}</p>
+            <p>Cliente: {order.user.name}</p>
+            <p>Id del cliente: {order.userId}</p>
             {order.factories.map((factory) => {
               return (
                 <>
