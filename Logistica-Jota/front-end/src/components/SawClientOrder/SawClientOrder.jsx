@@ -25,25 +25,25 @@ const SawClientOrder = () => {
         
   return (
     <div>
-        {orders.map((order)=>{
+        {orders.map((order,index)=>{
             return (
-                <div className='order'>
-                    <h3>Pedido numero : {order.id}</h3>
-                    {order.factories.map((factory)=>{
+              <div className="order" key={index}>
+                <h3>Pedido numero : {order.id}</h3>
+                {order.factories.map((factory) => {
+                  return (
+                    <>
+                      <p className="subrayar">Fábrica : {factory.name}</p>
+                      {factory.references.map((reference) => {
                         return (
-                            <div className='factory'>
-                                <p>Fábrica : {factory.name}</p>
-                                {factory.references.map((reference)=>{
-                                    return (
-                                        <>
-                                            <p>Referencias: {reference.reference_code}</p>
-                                        </>
-                                    )
-                                })}
-                            </div>
+                          <>
+                            <p>Referencia: {reference.reference_code}</p>
+                          </>
                         )
-                    })}
-                </div>
+                      })}
+                    </>
+                  )
+                })}
+              </div>
             )
                 
         })}
