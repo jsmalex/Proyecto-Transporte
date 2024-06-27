@@ -7,6 +7,38 @@
 .header-services{
     position: relative;
     right: 10%;
+    font-size: 40px;
+}
+
+.services-article{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 5%;
+}
+
+.p-service{
+    position: relative;
+    width: 50%;
+    left: 15%;
+}
+
+.logistics{
+    top: 5vh;
+}
+
+.ref-trans{
+    top: 3.5vh;
+}
+
+.customs{
+    top: 7vh;
+}
+
+.img-service{
+    position: relative;
+    left: 10% ;
+    width: 25%;
+    height: 25%;
 }
 
 .why-us{

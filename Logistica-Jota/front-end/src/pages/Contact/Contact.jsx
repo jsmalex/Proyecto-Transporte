@@ -13,19 +13,40 @@ const Contact = () => {
               nuestros servicios, no dudes en contactarnos a través de los
               siguientes medios:
             </p>
-            <ul>
-              <li>
-                <strong>Teléfono:</strong> +34 123 456 789
+            <ul id="ul-chahci">
+              <li className="list-item-ul-chahci">
+                <img className="icon" src="src/assets/img/phone.png" />
+                <strong className="adri-has-been-here tel">
+                  <p>Teléfono:</p>
+                </strong>
+                <p className="info-ul">
+                  <b>+34 123 456 789</b>
+                </p>
               </li>
-              <li>
-                <strong>Email:</strong> info@empresa-logistica.com
+              <li className="list-item-ul-chahci">
+                <img className="icon" src="src/assets/img/email-icon.jpg" />
+                <strong className="adri-has-been-here email">
+                  <p>Email:</p>
+                </strong>
+                <p className="info-ul">
+                  <b>info@empresa-logistica.com</b>
+                </p>
               </li>
-              <li>
-                <strong>Dirección:</strong> Calle Principal 123, Ciudad, País
+              <li className="list-item-ul-chahci">
+                <img
+                  className="icon"
+                  src="src/assets/icons/ubicacionfactory.jpg"
+                />
+                <strong className="adri-has-been-here ">
+                  <p>Dirección:</p>
+                </strong>
+                <p className="info-ul">
+                  <b>Calle Principal 123, Ciudad, País</b>
+                </p>
               </li>
             </ul>
           </article>
-          <article>
+          <article className="our-social-media">
             <h3>Nuestras Redes Sociales</h3>
             <p className="rrss-caption">
               Síguenos en nuestras redes sociales para estar al tanto de

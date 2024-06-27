@@ -27,18 +27,18 @@ nav {
 .tab {
   transition: transform 0.3s ease-in-out;
   border: none;
-  background-color: #373a40;
+  background-color: #75d64e;
   padding: 8px 28px;
   cursor: pointer;
-  border-radius: 4px;
+  border-radius: 10px solid #000000;
   display: inline-block;
   margin: 5px 85px 5px 5px;
   font: menu;
   width: 50%;
-  color: white;
+  color: rgb(255, 255, 255);
 }
 
-button {
+.button {
   transition: transform 0.3s ease-in-out;
   border: none;
   color: black;
@@ -74,7 +74,7 @@ button:hover {
 }
 
 #mySite:hover {
-  color: #97be5a !important;
+  color: #50b67e !important;
 }
 
 #header a {
@@ -83,7 +83,7 @@ button:hover {
   color: white;
   &:hover {
     transform: scale(1.1);
-    color: #97be5a;
+    color: #0c6627;
   }
   font-weight: bold;
 }

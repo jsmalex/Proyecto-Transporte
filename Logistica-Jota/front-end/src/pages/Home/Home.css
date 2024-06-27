@@ -13,7 +13,7 @@ h1 {
 
 .trucks {
     width: 100%;
-    height: 30%;
+    height: 25%;
     margin-top: 15px;
 }
 
@@ -42,15 +42,14 @@ p {
     width: 100%;
     height: 40vh;
     background: linear-gradient(#FF8F00,#97BE5A);
-    
-
+    position: relative;
 }
 
 .overfoot {
     opacity: 75%;
     width: 98%;
     height: 30%;
-    margin-top: 15px;
+    margin-top: 10%;
     margin-right: 3px;
     border-radius:3px;
     border-width: 10px;

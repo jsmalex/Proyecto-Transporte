@@ -1,38 +1,137 @@
-.contact{
-    position: relative;
-    background-color:#D5F0C1;
-
+.contact {
+  position: relative;
+  background-color: #d5f0c1;
+  bottom: 3vh;
 }
 
-.contact-header{
-    position: relative;
-    right: 11%;
+.contact-header {
+  position: relative;
+  right: 11%;
+  top: 1vh;
+  font-size: 40px;
 }
 
-.rrss{
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    top: -5vh;
+.rrss {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  top: -5vh;
 }
 
-.rs:hover{
-    transform: scale(1.2);
-    transition: transform 0.3s ease-in-out;
+.rs:hover {
+  transform: scale(1.2);
+  transition: transform 0.3s ease-in-out;
 }
 
-.info-question{
-   position: relative; 
-   width: 85%;
-   left: 5%;
+.info-question {
+  position: relative;
+  width: 85%;
+  left: 5%;
 }
 
-.rrss-caption{
-    position: relative;
-    width: 70%;
-    left: 20%;
+.rrss-caption {
+  position: relative;
+  width: 70%;
+  left: 20%;
 }
 
-strong{
-    margin-right: 3%;
+strong {
+  margin-right: 3%;
+}
+
+#ul-chahci {
+  height: 400px;
+}
+
+.list-item-ul-chahci {
+  position: relative;
+  width: 70%;
+  left: 5%;
+  background-color: #7bdf83;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.icon {
+  margin-right: 5%;
+  margin-bottom: 2%;
+  margin-top: 2%;
+  margin-left: 2%;
+}
+
+.adri-has-been-here {
+  position: relative;
+  width: 10em;
+  left: 5%;
+  height: 3.5em;
+  top: 3vh;
+  border: 3px ridge #149cea;
+  outline: none;
+  background-color: transparent;
+  color: white;
+  transition: 1s;
+  border-radius: 0.3em;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  color: black;
+}
+
+.tel {
+  margin-right: 170px;
+  top: 3vh;
+}
+
+.email {
+  margin-right: 55px;
+  top: 3vh;
+}
+
+.adri-has-been-here::after {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 3%;
+  width: 95%;
+  height: 40%;
+
+  transition: 0.5s;
+  transform-origin: center;
+}
+
+.adri-has-been-here::before {
+  content: '';
+  transform-origin: center;
+  position: absolute;
+  top: 80%;
+  left: 3%;
+  width: 95%;
+  height: 40%;
+
+  transition: 0.5s;
+}
+
+.adri-has-been-here:hover::before,
+#adri-has-been-here:hover::after {
+  transform: scale(0);
+}
+
+.adri-has-been-here:hover {
+  box-shadow: inset 0px 0px 25px #1479ea;
+}
+
+.adri-has-been-here p {
+  position: relative;
+  bottom: 16px;
+}
+
+.info-ul{
+  position: relative;
+    top: 17px;
+}
+
+.our-social-media {
+  margin-top: 15%;
 }

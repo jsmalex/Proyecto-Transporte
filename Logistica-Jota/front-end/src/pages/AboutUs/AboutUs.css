@@ -1,27 +1,134 @@
+h3{
+    font-size: 28px;
+}
+
+p{
+    font-size: 25px;
+}
+
+#main-services{
+    position: relative;
+    bottom: 1vh;
+}
+
 .about-us-header{
     position: relative;
     right: 10%;
     font-size: 40px;
 }
 
-.why-us{
+.information{
+    display: flex;
+    flex-direction: row;
+}
+
+.why-us-about-us{
+    position: relative;
+    top: 30vh;
     width: 65%;
     height: 45vh;
 }
 
 .about-us{
     background-color:#D5F0C1;
-    height: 195vh;
+    height: 355vh;
     position: relative;
     top: 2vh;
 }
 
-.story, .vision, .team, .social-responsability{
+.story, .vision, .team{
+    position: relative;
     width: 50%;
+    top: 1vh;
 }
 
-.mission, .values, .work-site{
+.about-us-img{
+    width: 40%;
+    height: 100%;
+}
+
+.our-mission-img{
+    position: relative;
+    width: 40%;
+    height: 60%;
+    width: 70%;
+    right: 100%;
+}
+
+.our-mission-text{
+    position: relative;
+    top: -30vh;
+    right: 10%;
+}
+
+.mission, .values{
     position: relative;
     width: 50%;
     left: 50%;
+    top: 5vh;
+}
+
+.work-site{
+    position: relative;
+    width: 50%;
+    top: 17vh;
+    left: 7%;
+}
+
+.work-site-img{
+    position: relative;
+    width: 40%;
+    height: 50%;
+    left: 5%;
+    top: 10vh
+}
+
+.our-vission-img{
+    width: 40%;
+    height: 30%;
+}
+
+.our-values-img{
+    position: relative;
+    width: 40%;
+    height: 30%;
+    left: 3%;   
+    top: 17vh
+}
+
+.values{
+    position: relative;
+    left: 7%;
+}
+
+.team{
+    top: 15vh;
+    left: 3%;
+}
+
+.team-img{
+    position: relative;
+    width: 40%;
+    height: auto;
+    top: 5vh;
+    left: 5%;
+}
+
+.social-responsability{
+    position: relative;
+    width: 50%;
+    top: 20vh;
+    left: 5%;
+}
+
+.social-responsability-img{
+    position: relative;
+    width: 30%;
+    height: 30%;
+    top: 20vh;
+    left: 10%;
+}
+
+li{
+    font-size: 22px;
 }

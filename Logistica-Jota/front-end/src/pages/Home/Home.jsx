@@ -1,9 +1,6 @@
-import "./Home.css"
-
-
+import './Home.css'
 
 const Home = () => {
-  
   return (
     <div className="home">
       <h1 className="homeh1">Bienvenido a Logística Jota</h1>
@@ -28,7 +25,7 @@ const Home = () => {
           España.
         </p>
       </div>
-        <img className="overfoot" src="src/assets/img/threetruck.jpg"></img>
+      <img className="overfoot" src="src/assets/img/threetruck.jpg"></img>
     </div>
   )
 }
