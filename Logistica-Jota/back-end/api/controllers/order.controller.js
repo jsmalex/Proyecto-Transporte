@@ -4,7 +4,9 @@ const Reference = require("../models/reference.model");
 
 const getAllOrders = async (request, response) => {
   try {
-    const orders = await Order.findAll();
+    const orders = await Order.findAll({
+      include: [Reference,Factory]
+    });
     return response.status(200).json(orders);
   } catch (error) {
     console.log(error);

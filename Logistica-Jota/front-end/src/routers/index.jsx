@@ -18,7 +18,7 @@ import CreateFactoryOK from '../pages/CreateFactoryOK/CreateFactoryOK'
 import MakeOrder from '../pages/MakeOrder/MakeOrder'
 import OrderOK from '../pages/OrderOK/OrderOK'
 import GetAllOrderOfClient from '../pages/GetAllOrderOfClient/GetAllOrderOfClient'
-
+import GetAllOrdersOfAllUsers from '../pages/GetAllOrdersOfAllUsers/GetAllOrdersOfAllUsers'
 
 const router = createBrowserRouter([
   {
@@ -96,6 +96,10 @@ const router = createBrowserRouter([
       {
         path: '/GetAllOrderOfClient',
         element: <GetAllOrderOfClient />,
+      },
+      {
+        path: '/GetAllOrdersOfAllUsers',
+        element: <GetAllOrdersOfAllUsers />,
       },
     ],
   },
