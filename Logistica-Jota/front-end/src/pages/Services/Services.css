@@ -1,7 +1,11 @@
+#main-services{
+    height:274vh;
+}
+
 .services{
     position: relative;
     background-color:#D5F0C1;
-    top: 3vh;
+    top: 2vh;
 }
 
 .header-services{

@@ -3,7 +3,7 @@ import './Contact.css'
 const Contact = () => {
   return (
     <div>
-      <main>
+      <main id="main-contact">
         <section className="contact">
           <h2 className="contact-header">Contacto</h2>
           <article>
@@ -45,39 +45,6 @@ const Contact = () => {
                 </p>
               </li>
             </ul>
-          </article>
-          <article className="our-social-media">
-            <h3>Nuestras Redes Sociales</h3>
-            <p className="rrss-caption">
-              Síguenos en nuestras redes sociales para estar al tanto de
-              nuestras novedades:
-            </p>
-            <div className="rrss">
-              <li className="rs">
-                <a
-                  href="https://www.facebook.com/empresa-logistica"
-                  target="_blank"
-                >
-                  <img className="rrss-img" src="src/assets/img/facebook.png" />
-                </a>
-              </li>
-              <li className="rs">
-                <a
-                  href="https://www.twitter.com/empresa-logistica"
-                  target="_blank"
-                >
-                  <img className="rrss-img" src="src/assets/img/linkedin.png" />
-                </a>
-              </li>
-              <li className="rs">
-                <a
-                  href="https://www.linkedin.com/company/empresa-logistica"
-                  target="_blank"
-                >
-                  <img className="rrss-img" src="src/assets/img/X.png" />
-                </a>
-              </li>
-            </div>
           </article>
         </section>
       </main>

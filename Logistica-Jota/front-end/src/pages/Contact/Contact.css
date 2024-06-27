@@ -1,3 +1,9 @@
+#main-contact{
+    height: 80vh;
+    background-color: #D5F0C1;
+    margin-bottom: 20px;
+}
+
 .contact {
   position: relative;
   background-color: #d5f0c1;
@@ -10,14 +16,6 @@
   top: 1vh;
   font-size: 40px;
 }
-
-.rrss {
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  top: -5vh;
-}
-
 .rs:hover {
   transform: scale(1.2);
   transition: transform 0.3s ease-in-out;
@@ -27,12 +25,6 @@
   position: relative;
   width: 85%;
   left: 5%;
-}
-
-.rrss-caption {
-  position: relative;
-  width: 70%;
-  left: 20%;
 }
 
 strong {
@@ -135,8 +127,4 @@ strong {
 .info-ul {
   position: relative;
   top: 17px;
-}
-
-.our-social-media {
-  margin-top: 15%;
 }

@@ -34,6 +34,7 @@ nav {
   display: inline-block;
   margin: 5px 85px 5px 5px;
   font: menu;
+  font-size: 17.6px;
   width: 50%;
   color: rgb(255, 255, 255);
 }
@@ -70,6 +71,7 @@ button:hover {
   right: 10%;
   color: #5b7433 !important;
   font-weight: bold;
+  font-size: 20px;
   bottom: 5vh;
 }
 
