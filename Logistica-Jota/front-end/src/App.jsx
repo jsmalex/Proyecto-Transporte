@@ -1,4 +1,4 @@
-import { RouterProvider, useActionData } from 'react-router-dom'
+import { RouterProvider } from 'react-router-dom'
 import './App.css'
 import router from './routers/index'
 import { Context } from './context/context'
