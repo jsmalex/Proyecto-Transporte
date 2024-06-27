@@ -1,3 +1,7 @@
+#about-us{
+    height: 350vh;
+}
+
 h3{
     font-size: 28px;
 }
@@ -5,7 +9,6 @@ h3{
 p{
     font-size: 25px;
 }
-
 
 .about-us-header{
     position: relative;

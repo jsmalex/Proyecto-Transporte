@@ -50,13 +50,10 @@ p {
     width: 98%;
     height: 30%;
     margin-top: 10%;
+    margin-bottom: 5%;
     margin-right: 3px;
     border-radius:3px;
     border-width: 10px;
     border-style:outset;
     border-color:#97BE5A;
-
-
-
-
 }
