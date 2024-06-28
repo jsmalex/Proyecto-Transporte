@@ -24,7 +24,7 @@ const SawClientOrder = () => {
     }, [])
         
   return (
-    <div>
+    <div style={{  height:"40vh", overflow:"scroll", marginBottom:"50px",}}>
         {orders.map((order,index)=>{
             return (
               <div className="order" key={index}>

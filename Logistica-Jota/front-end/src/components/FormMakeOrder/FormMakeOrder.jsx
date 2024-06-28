@@ -37,9 +37,11 @@ const {
     }
     return arrayForms
   }
+  
   const doOrder = async() =>{
     if (buttonClick) {
       const referencestoFactory =references.splice(0,numberReferences)
+      console.log(order)
       order.push({
          Factory_id: numberFabric,
          referencies: referencestoFactory
@@ -50,7 +52,7 @@ const {
     }
   }
   return (
-    <div>
+    <div style={{ all: "unset"}}>
       <form>
         <fieldset>
           <div>

@@ -21,7 +21,7 @@ function FormMakeReference() {
   }, [buttonClick])
 
   return (
-    <div>
+    <div style={{ all: 'unset' }}>
       <input
         onChange={(e) => {
           setRef(e.target.value)

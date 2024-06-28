@@ -8,12 +8,9 @@ import { useNavigate } from "react-router-dom"
 
 
 const MakeOrder = () => {
-  const {
-    order,
-    buttonClick,
-    setButtonClick,
-  } = useContext(Context)
+  const { order, buttonClick, setButtonClick, setOrder } = useContext(Context)
   const [numberFactories, setnumberFactories] = useState(0)
+  const [buttonisClicked, setbuttonisClicked] = useState(false)
   const navigate = useNavigate()
 
   const displayFormsFactory = () =>{
@@ -29,20 +26,24 @@ const MakeOrder = () => {
     return arrayForms
   }
   const myOrder = async() =>{
+    console.log(buttonClick)
     if(buttonClick){
-      await sendOrder(order)
-      navigate("/OrderOK")
       setButtonClick(false)
+      console.log(order)
+      await sendOrder(order)
+     
+      console.log(order)
+      navigate("/OrderOK")
     }
   }
   useEffect(() => {
     myOrder();
 
-  }, [order])
+  }, [buttonClick])
   return (
-    <div id="make-order">
-      <h2 className="header-make-order">Contrate su transporte</h2>
-      <div className="make-order-form">
+    <div id="make-order" style={{ all: 'unset' }}>
+     
+      <div> <h2 className="header-make-order">Contrate su transporte</h2>
         <label>¿A cuantas fabricas debemos de ir? </label>
         <input
           onChange={(e) => {
@@ -54,9 +55,14 @@ const MakeOrder = () => {
         />
         {displayFormsFactory()}
       </div>
-      <button className="make-order-button" onClick={()=>{setButtonClick(true);
-      }
-      }>Hacer pedido</button>
+      <button
+        className="make-order-button"
+        onClick={() => {
+          setButtonClick(true)
+        }}
+      >
+        Hacer pedido
+      </button>
     </div>
   )
 }

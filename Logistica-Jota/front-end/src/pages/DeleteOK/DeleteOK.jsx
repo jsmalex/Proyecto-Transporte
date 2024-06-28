@@ -4,7 +4,7 @@ import "./DeleteOK.css"
 
 const DeleteOK = () => {
   return (
-    <div>
+    <div style={{height:"25vh"}}>
        <ConfirmDelete/>
     </div>
   )

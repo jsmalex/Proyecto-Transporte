@@ -4,9 +4,9 @@ import "./GetAllOrderOfClient.css"
 
 const GetAllOrderOfClient = () => {
   return (
-    <div>
-        <h2>Tus pedidos</h2>
-        <SawClientOrder/>
+    <div style={{ all: 'unset'}}>
+      <h2 style={{ marginTop: '100px', marginRight: '300px' }}>Tus pedidos</h2>
+      <SawClientOrder />
     </div>
   )
 }

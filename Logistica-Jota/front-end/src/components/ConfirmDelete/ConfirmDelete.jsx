@@ -6,7 +6,7 @@ const ConfirmDelete = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="background-confirm-delete">
+    <div >
       <p className="alert-delete">¿Seguro que desea darse de baja en nuestra web?</p>
       <div className="question-buttons">
         <button onClick={async ()=>{

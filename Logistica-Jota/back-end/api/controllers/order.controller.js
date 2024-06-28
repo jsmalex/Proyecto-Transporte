@@ -48,7 +48,7 @@ const createOrder = async (req, res) => {
     const order = await Order.create({
       userId: res.locals.user.id,
     });
-
+console.log(req.body)
     //Aqui escribo en la tabla de Fabricas
     req.body.map(async (miniOrder)=>{
 
