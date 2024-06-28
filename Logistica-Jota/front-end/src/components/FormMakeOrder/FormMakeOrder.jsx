@@ -1,27 +1,21 @@
-import { useContext, useEffect, useState } from "react";
-import { getAllFactories } from "../../services/getAllFactories"
-import "./FormMakeOrder.css"
-import FormMakeReference from "../FormMakeReference/FormMakeReference";
-import { Context } from "../../context/context";
+import { useContext, useEffect, useState } from 'react'
+import { getAllFactories } from '../../services/getAllFactories'
+import './FormMakeOrder.css'
+import FormMakeReference from '../FormMakeReference/FormMakeReference'
+import { Context } from '../../context/context'
 const order = []
 const FormMakeOrder = () => {
-const {
-  setOrder,
-  buttonClick,
-  references,
-} = useContext(Context)
+  const { setOrder, buttonClick, references } = useContext(Context)
   const [dataFactories, setDataFactories] = useState([])
   const [numberReferences, setnumberReferences] = useState(0)
-  const [numberFabric,setnumberFabric] = useState()
+  const [numberFabric, setnumberFabric] = useState()
   useEffect(() => {
     handleGetAllFactories()
   }, [])
 
   useEffect(() => {
     doOrder()
-  },[references])
-
-
+  }, [references])
 
   const handleGetAllFactories = async () => {
     const result = await getAllFactories()
@@ -31,38 +25,32 @@ const {
   const displayFormsReference = () => {
     const arrayForms = []
     for (let i = 0; i < numberReferences; i++) {
-      arrayForms.push(
-        <FormMakeReference />
-      )
+      arrayForms.push(<FormMakeReference />)
     }
     return arrayForms
   }
-  
-  const doOrder = async() =>{
+  const doOrder = async () => {
     if (buttonClick) {
-      const referencestoFactory =references.splice(0,numberReferences)
-      console.log(order)
+      const referencestoFactory = references.splice(0, numberReferences)
       order.push({
-         Factory_id: numberFabric,
-         referencies: referencestoFactory
-      }
-      )
+        Factory_id: numberFabric,
+        referencies: referencestoFactory,
+      })
       setOrder(order)
-      
     }
   }
   return (
-    <div style={{ all: "unset"}}>
+    <main >
       <form>
-        <fieldset>
-          <div>
+        <main style={{ display:"flex", justifyContent:"space-around"}}>
+          <main style={{ marginBottom: '10px' }}>
             <label>Seleccione una fabrica:</label>
             <select
               onChange={(e) => {
                 setnumberFabric(e.target.value)
               }}
             >
-              <option selected="true" disabled >
+              <option selected="true" disabled>
                 Selecciona Fabrica
               </option>
               {dataFactories.map((factory) => (
@@ -71,9 +59,9 @@ const {
                 </option>
               ))}
             </select>
-          </div>
+          </main>
 
-          <div>
+          <section style={{ marginBottom: '20px' }}>
             <label>¿Cuantos referencia se recogeran en esta fabrica? </label>
             <input
               onChange={(e) => {
@@ -84,10 +72,10 @@ const {
               placeholder="Seleccione cuantas referencias"
             />
             {displayFormsReference()}
-          </div>
-        </fieldset>
+          </section>
+        </main>
       </form>
-    </div>
+    </main>
   )
 }
 

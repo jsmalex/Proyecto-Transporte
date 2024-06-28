@@ -39,7 +39,7 @@ const FormAddFactory = () => {
     }
   }
   return (
-    <div className="form-add-factory">
+    <main className="form-add-factory">
       <Toaster />
       <h2 className="add-factory">Añadir fabrica</h2>
       <form className="new-factory-form" action="">
@@ -85,6 +85,7 @@ const FormAddFactory = () => {
         </div>
 
         <button
+          style={{ marginTop:"100px" }}
           className="button-add-factory pulse-effect"
           onClick={(e) => {
             e.preventDefault()
@@ -94,7 +95,7 @@ const FormAddFactory = () => {
           Añadir
         </button>
       </form>
-    </div>
+    </main>
   )
 }
 

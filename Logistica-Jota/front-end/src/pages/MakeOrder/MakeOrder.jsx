@@ -1,51 +1,43 @@
-import { useContext, useState } from "react"
-import FormMakeOrder from "../../components/FormMakeOrder/FormMakeOrder"
-import "./MakeOrder.css"
-import { Context } from "../../context/context"
-import { useEffect } from "react"
-import { sendOrder } from "../../services/sendOrder"
-import { useNavigate } from "react-router-dom"
-
+import { useContext, useState } from 'react'
+import FormMakeOrder from '../../components/FormMakeOrder/FormMakeOrder'
+import './MakeOrder.css'
+import { Context } from '../../context/context'
+import { useEffect } from 'react'
+import { sendOrder } from '../../services/sendOrder'
+import { useNavigate } from 'react-router-dom'
 
 const MakeOrder = () => {
-  const { order, buttonClick, setButtonClick, setOrder } = useContext(Context)
+  const { order, buttonClick, setButtonClick } = useContext(Context)
   const [numberFactories, setnumberFactories] = useState(0)
-  const [buttonisClicked, setbuttonisClicked] = useState(false)
   const navigate = useNavigate()
 
-  const displayFormsFactory = () =>{
-    
+  const displayFormsFactory = () => {
     const arrayForms = []
 
-    for (let i=0; i< numberFactories; i++){
-      arrayForms.push(
-        <FormMakeOrder/>
-      )
-     
-    } 
+    for (let i = 0; i < numberFactories; i++) {
+      arrayForms.push(<FormMakeOrder />)
+    }
     return arrayForms
   }
-  const myOrder = async() =>{
-    console.log(buttonClick)
-    if(buttonClick){
-      setButtonClick(false)
-      console.log(order)
+  const myOrder = async () => {
+    if (buttonClick) {
       await sendOrder(order)
-     
-      console.log(order)
-      navigate("/OrderOK")
+      navigate('/OrderOK')
+      setButtonClick(false)
     }
   }
   useEffect(() => {
-    myOrder();
-
-  }, [buttonClick])
+    myOrder()
+  }, [order])
   return (
-    <div id="make-order" style={{ all: 'unset' }}>
-     
-      <div> <h2 className="header-make-order">Contrate su transporte</h2>
-        <label>¿A cuantas fabricas debemos de ir? </label>
+    <main style={{ marginTop: '70px' }}>
+      <h2 className="header-make-order">Contrate su transporte</h2>
+      <main style={{ height: '500px', overflowY: 'scroll' }}>
+        <label style={{ fontSize: '30px', marginLeft: '10px', fontStyle:"italic"}}>
+          ¿A cuantas fabricas debemos de ir?{' '}
+        </label>
         <input
+          style={{ marginLeft: '400px',marginBottom:"30px" }}
           onChange={(e) => {
             setnumberFactories(parseInt(e.target.value))
           }}
@@ -54,16 +46,17 @@ const MakeOrder = () => {
           placeholder="Seleccione el numero de fabricas"
         />
         {displayFormsFactory()}
-      </div>
-      <button
-        className="make-order-button"
-        onClick={() => {
-          setButtonClick(true)
-        }}
-      >
-        Hacer pedido
-      </button>
-    </div>
+
+        <button
+          style={{ marginTop: '100px' }}
+          onClick={() => {
+            setButtonClick(true)
+          }}
+        >
+          Hacer pedido
+        </button>
+      </main>
+    </main>
   )
 }
 

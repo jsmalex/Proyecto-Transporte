@@ -4,10 +4,7 @@ import { Context } from '../../context/context'
 import { useEffect } from 'react'
 
 function FormMakeReference() {
-  const {
-    buttonClick,
-    setReferences,
-  } = useContext(Context)
+  const { buttonClick, setReferences } = useContext(Context)
   const [Ref, setRef] = useState()
 
   const handletReferences = () => {
@@ -21,14 +18,14 @@ function FormMakeReference() {
   }, [buttonClick])
 
   return (
-    <div style={{ all: 'unset' }}>
-      <input
+    <main style={{ marginBottom:"20px", }} >
+      <input 
         onChange={(e) => {
           setRef(e.target.value)
         }}
         type="text"
       />
-    </div>
+    </main>
   )
 }
 

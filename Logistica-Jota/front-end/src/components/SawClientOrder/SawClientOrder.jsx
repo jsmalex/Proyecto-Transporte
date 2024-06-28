@@ -24,14 +24,14 @@ const SawClientOrder = () => {
     }, [])
         
   return (
-    <div style={{  height:"40vh", overflow:"scroll", marginBottom:"50px",}}>
+    <main style={{  height:"40vh", overflow:"scroll", marginBottom:"50px",}}>
         {orders.map((order,index)=>{
             return (
               <div className="order" key={index}>
                 <h3>Pedido numero : {order.id}</h3>
-                {order.factories.map((factory) => {
+                {order.factories.map((factory, index) => {
                   return (
-                    <>
+                    <main style={{display:"flex"}} key={index}>
                       <p className="subrayar">Fábrica : {factory.name}</p>
                       {factory.references.map((reference) => {
                         return (
@@ -40,14 +40,14 @@ const SawClientOrder = () => {
                           </>
                         )
                       })}
-                    </>
+                    </main>
                   )
                 })}
               </div>
             )
                 
         })}
-    </div>
+    </main>
   )
 }
 

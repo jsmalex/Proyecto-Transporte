@@ -25,7 +25,7 @@ const SawAllOrdersOfAllClients = () => {
   }, [])
 
   return (
-    <div>
+    <main style={{ height: '55vh', overflow: 'scroll', marginBottom: '50px' }}>
       {orders.map((order, index) => {
         return (
           <div className="order" key={index}>
@@ -49,7 +49,7 @@ const SawAllOrdersOfAllClients = () => {
           </div>
         )
       })}
-    </div>
+    </main>
   )
 }
 
